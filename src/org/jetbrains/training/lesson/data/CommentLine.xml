@@ -24,7 +24,6 @@ public class CommentLineDemo {
         <Text description="" btn="OK">You can comment out a line by pressing &lt;span color="gray"&gt;⌘ + /&lt;/span&gt;</Text>
         <Text description="Move the caret to tmp declaration" btn="..."/>
         <TraverseCaret stop="120" delay="20"/>
-        <Action action="CommentByLineComment" delay="2000" balloon="Press ⌘ + / to comment out this line"/>
         <Action action="CommentByLineComment" delay="2000" balloon="⌘ + / (Comment line)"/>
         <Wait delay="200"/>
         <Text description="To uncomment press the same shortcut on this line" btn="ok"/>

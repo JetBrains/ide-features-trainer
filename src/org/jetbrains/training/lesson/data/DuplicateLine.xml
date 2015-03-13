@@ -24,8 +24,6 @@
     <TraverseCaret stop="294" delay="10"/>
     <Action action="EditorDelete" delay="50" />
     <Wait delay="400"/>
-    <TypeText description="typing &lt;span color=&quot;gray&quot;&gt;x&lt;/span&gt;">x</TypeText>
-    <Text description="That's it!" btn="Let me try"/>
     <TypeText>x</TypeText>
     <Text description="That's it!" btn="let me try"/>
     <Action action="EditorDelete" delay="50"/>
