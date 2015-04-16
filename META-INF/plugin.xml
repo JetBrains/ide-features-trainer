@@ -44,8 +44,12 @@
             description="Start learn lessons">
       <add-to-group group-id="CodeMenu" anchor="first"/>
     </action>
-    <action id="showMenu" class="org.jetbrains.training.graphics.ShowHint" text="Show Hint"
+    <action id="showMenu" class="org.jetbrains.training.util.ShowHint" text="Show Hint"
             description="Show Hint">
+      <add-to-group group-id="CodeMenu"/>
+    </action>
+    <action id="showSmallLog" class="org.jetbrains.training.util.BigBrother" text="DEBUG: Show SmallLog"
+            description="DEBUG: Show SmallLog">
       <add-to-group group-id="CodeMenu"/>
     </action>
   </actions>
