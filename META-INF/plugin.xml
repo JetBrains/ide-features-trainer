@@ -2,7 +2,7 @@
   <id>org.jetbrains.training</id>
   <name>Training Concept</name>
   <version>0.2</version>
-  <vendor email="sergey.karashevich@jetbrains.com" url="http://www.jetbrain.com">JetBrains</vendor>
+  <vendor email="sergey.karashevich@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
 
   <description><![CDATA[
       This IntelliJ IDEA plugin helps use IDE productively.<br>
@@ -48,7 +48,7 @@
             description="Show Hint">
       <add-to-group group-id="CodeMenu"/>
     </action>
-    <action id="showSmallLog" class="org.jetbrains.training.util.BigBrother" text="DEBUG: Show SmallLog"
+    <action id="showSmallLog" class="org.jetbrains.training.util.ShowSmallLog" text="DEBUG: Show SmallLog"
             description="DEBUG: Show SmallLog">
       <add-to-group group-id="CodeMenu"/>
     </action>
