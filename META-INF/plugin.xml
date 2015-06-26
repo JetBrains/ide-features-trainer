@@ -22,8 +22,10 @@
   <depends>com.intellij.modules.lang</depends>
   -->
 
+
+
   <extensions defaultExtensionNs="com.intellij">
-    <!-- Add your extensions here -->
+        <fileEditorProvider implementation="org.jetbrains.training.eduUI.EduEditorProvider"/>
   </extensions>
 
   <application-components>
@@ -48,8 +50,8 @@
             description="Show Hint">
       <add-to-group group-id="CodeMenu"/>
     </action>
-    <action id="showSmallLog" class="org.jetbrains.training.util.ShowSmallLog" text="DEBUG: Show SmallLog"
-            description="DEBUG: Show SmallLog">
+    <action id="showEduUI" class="org.jetbrains.training.ShowEduUi" text="DEBUG: Show Edu UI"
+            description="DEBUG: Show Edu UI">
       <add-to-group group-id="CodeMenu"/>
     </action>
   </actions>
