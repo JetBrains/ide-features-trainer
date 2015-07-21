@@ -2,7 +2,7 @@
   <id>org.jetbrains.training</id>
   <name>Training Concept</name>
   <version>0.2</version>
-  <vendor email="sergey.karashevich@jetbrains.com" url="http://www.jetbrain.com">JetBrains</vendor>
+  <vendor email="sergey.karashevich@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
 
   <description><![CDATA[
       This IntelliJ IDEA plugin helps use IDE productively.<br>
@@ -22,8 +22,10 @@
   <depends>com.intellij.modules.lang</depends>
   -->
 
+
+
   <extensions defaultExtensionNs="com.intellij">
-    <!-- Add your extensions here -->
+        <fileEditorProvider implementation="org.jetbrains.training.eduUI.EduEditorProvider"/>
   </extensions>
 
   <application-components>
@@ -36,9 +38,17 @@
 
   <actions>
     <!-- Add your actions here -->
-    <action id="courseManager" class="org.jetbrains.training.lesson.CourseManager" text="Courses"
-            description="Start learn lessons">
-      <add-to-group group-id="CodeMenu" anchor="first"/>
+    <action id="StudyMenu" class="org.jetbrains.training.lesson.CourseMenu" text="Learn"
+            description="Learn how to use IntelliJ IDEA">
+      <add-to-group group-id="MainMenu" relative-to-action="HelpMenu" anchor="before"/>
+    </action>
+    <!--<action id="courseManager" class="org.jetbrains.training.lesson.CourseManager" text="Courses"-->
+            <!--description="Start learn lessons">-->
+      <!--<add-to-group group-id="StudyMenu"/>-->
+    <!--</action>-->
+    <action id="showEduUI" class="org.jetbrains.training.ShowEduUi" text="DEBUG: Show Edu UI"
+            description="DEBUG: Show Edu UI">
+      <add-to-group group-id="CodeMenu"/>
     </action>
   </actions>
 

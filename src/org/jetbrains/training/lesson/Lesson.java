@@ -3,6 +3,11 @@ package org.jetbrains.training.lesson;
 import com.intellij.ide.ui.laf.darcula.ui.DarculaEditorTextFieldBorder;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.ToggleAction;
+import com.intellij.openapi.actionSystem.impl.PoppedIcon;
+import com.intellij.openapi.util.IconLoader;
+import com.intellij.ui.SizedIcon;
+import com.intellij.util.PlatformIcons;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.training.BadCourseException;
@@ -11,6 +16,7 @@ import org.jetbrains.training.LessonIsOpenedException;
 import org.jetbrains.training.graphics.DetailPanel;
 import org.jetbrains.training.graphics.HintPanel;
 
+import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,7 +25,7 @@ import java.util.concurrent.ExecutionException;
 /**
  * Created by karashevich on 29/01/15.
  */
-public class Lesson extends AnAction {
+public class Lesson extends ToggleAction {
 
     private Scenario scn;
     private String name;
@@ -40,7 +46,11 @@ public class Lesson extends AnAction {
             name = scn.getName();
 
             isPassed = passed;
-            targetPath = scn.getTarget();
+            if (!scn.getSubtype().equals("aimless")) {
+                targetPath = scn.getTarget();
+            } else {
+                targetPath = null;
+            }
             lessonListeners = new ArrayList<LessonListener>();
             parentCourse = course;
 
@@ -86,7 +96,6 @@ public class Lesson extends AnAction {
     public boolean isOpen() {return isOpen;}
 
     public void setPassed(boolean passed){
-        if (hintPanel != null) hintPanel.setAllAsDone();
         isPassed = passed;
     }
 
@@ -94,12 +103,13 @@ public class Lesson extends AnAction {
         return scn;
     }
 
+    @Nullable
     public String getTargetPath() {
         return targetPath;
     }
 
     @Nullable
-    public Course getParentCourse() {return parentCourse;}
+    public Course getCourse() {return parentCourse;}
 
     //Listeners
     public void addLessonListener(LessonListener lessonListener){
@@ -152,10 +162,16 @@ public class Lesson extends AnAction {
         }
     }
 
+
     @Override
-    public void actionPerformed(AnActionEvent anActionEvent) {
+    public boolean isSelected(AnActionEvent anActionEvent) {
+        return isPassed;
+    }
+
+    @Override
+    public void setSelected(AnActionEvent anActionEvent, boolean b) {
         try {
-            CourseManager.getInstance().openLesson(anActionEvent, this);
+            CourseManager.getInstance().openLesson(anActionEvent.getProject(), this);
         } catch (BadCourseException e) {
             e.printStackTrace();
         } catch (BadLessonException e) {
@@ -171,10 +187,12 @@ public class Lesson extends AnAction {
         } catch (LessonIsOpenedException e) {
             e.printStackTrace();
         }
+
     }
 
-    @Override
-    public void update(AnActionEvent e) {
-        e.getPresentation().setEnabled(!isPassed());
-    }
+//    @Override
+//    public void update(AnActionEvent e) {
+//        e.getPresentation().setIcon(new SizedIcon(PlatformIcons.CHECK_ICON, 18, 18));
+//        e.getPresentation().setEnabled(!isPassed());
+//    }
 }
