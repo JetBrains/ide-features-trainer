@@ -38,7 +38,7 @@
 
   <actions>
     <!-- Add your actions here -->
-    <action id="StudyMenu" class="org.jetbrains.training.lesson.CourseManager" text="Learn"
+    <action id="StudyMenu" class="org.jetbrains.training.lesson.CourseMenu" text="Learn"
             description="Learn how to use IntelliJ IDEA">
       <add-to-group group-id="MainMenu" relative-to-action="HelpMenu" anchor="before"/>
     </action>
