@@ -46,9 +46,13 @@
             <!--description="Start learn lessons">-->
       <!--<add-to-group group-id="StudyMenu"/>-->
     <!--</action>-->
-    <action id="showEduUI" class="org.jetbrains.training.ShowEduUi" text="DEBUG: Show Edu UI"
+    <action id="ShowEduUI" class="org.jetbrains.training.ShowEduUi" text="DEBUG: Show Edu UI"
             description="DEBUG: Show Edu UI">
       <add-to-group group-id="CodeMenu"/>
+    </action>
+    <action id="ShowSmallLog" class="org.jetbrains.training.util.ShowSmallLog" text="Show Small Log"
+            description="Show Small Log to log actions">
+      <add-to-group group-id="CodeMenu" anchor="last"/>
     </action>
   </actions>
 
