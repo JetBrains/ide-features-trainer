@@ -54,10 +54,24 @@
             description="Show Small Log to log actions">
       <add-to-group group-id="CodeMenu" anchor="last"/>
     </action>
-    <action id="GetEditorWindow" class="org.jetbrains.training.actions.GetEditorWindow" text="Get Editor Window"
-            description="Get Editor's Window">
+    <action id="HighlightEditorArea" class="org.jetbrains.training.actions.ShowEditor" text="Show Editor"
+            description="Highlight Editor Area">
       <add-to-group group-id="CodeMenu" anchor="last"/>
     </action>
+    <action id="HighlightEditorAreaOld" class="org.jetbrains.training.actions.ShowEditorOld" text="Show Editor Old"
+            description="Highlight Editor Area Old">
+      <add-to-group group-id="CodeMenu" anchor="last"/>
+    </action>
+        <action id="HighlightProjectTreeArea" class="org.jetbrains.training.actions.ShowProjectTree" text="Show Project Tree"
+            description="Highlight Project Tree">
+      <add-to-group group-id="CodeMenu" anchor="last"/>
+    </action>
+        <action id="HighlightStatusBar" class="org.jetbrains.training.actions.ShowStatusBar" text="Show Status Bar"
+            description="Highlight Status Bar">
+      <add-to-group group-id="CodeMenu" anchor="last"/>
+    </action>
+
+
   </actions>
 
 </idea-plugin>
