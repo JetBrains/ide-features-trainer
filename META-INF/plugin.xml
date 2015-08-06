@@ -70,8 +70,10 @@
             description="Highlight Status Bar">
       <add-to-group group-id="CodeMenu" anchor="last"/>
     </action>
-
-
+        <action id="HighlightNavBar" class="org.jetbrains.training.actions.ShowNavBar" text="Show Nav Bar"
+            description="Highlight Nav Bar">
+      <add-to-group group-id="CodeMenu" anchor="last"/>
+    </action>
   </actions>
 
 </idea-plugin>
