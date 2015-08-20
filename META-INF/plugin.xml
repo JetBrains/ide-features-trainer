@@ -25,7 +25,8 @@
 
 
   <extensions defaultExtensionNs="com.intellij">
-        <fileEditorProvider implementation="org.jetbrains.training.eduUI.EduEditorProvider"/>
+        <fileEditorProvider implementation="org.jetbrains.training.editor.EduEditorProvider"/>
+        <actionPromoter implementation="org.jetbrains.training.editor.LearnActionPromoter"/>
   </extensions>
 
   <application-components>
