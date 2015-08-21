@@ -39,42 +39,38 @@
 
   <actions>
     <!-- Add your actions here -->
-    <action id="StudyMenu" class="org.jetbrains.training.lesson.CourseMenu" text="Learn"
+    <action id="LearnMenu" class="org.jetbrains.training.lesson.CourseMenu" text="Learn"
             description="Learn how to use IntelliJ IDEA">
       <add-to-group group-id="MainMenu" relative-to-action="HelpMenu" anchor="before"/>
     </action>
-    <!--<action id="courseManager" class="org.jetbrains.training.lesson.CourseManager" text="Courses"-->
-            <!--description="Start learn lessons">-->
-      <!--<add-to-group group-id="StudyMenu"/>-->
+    <!--<action id="ShowEduUI" class="org.jetbrains.training.actions.ShowEduUi" text="DEBUG: Show Edu UI"-->
+            <!--description="DEBUG: Show Edu UI">-->
+      <!--<add-to-group group-id="CodeMenu"/>-->
     <!--</action>-->
-    <action id="ShowEduUI" class="org.jetbrains.training.actions.ShowEduUi" text="DEBUG: Show Edu UI"
-            description="DEBUG: Show Edu UI">
-      <add-to-group group-id="CodeMenu"/>
-    </action>
-    <action id="ShowSmallLog" class="org.jetbrains.training.util.ShowSmallLog" text="Show Small Log"
-            description="Show Small Log to log actions">
-      <add-to-group group-id="CodeMenu" anchor="last"/>
-    </action>
-    <action id="HighlightEditorArea" class="org.jetbrains.training.actions.ShowEditor" text="Show Editor"
-            description="Highlight Editor Area">
-      <add-to-group group-id="CodeMenu" anchor="last"/>
-    </action>
-    <action id="HighlightEditorAreaOld" class="org.jetbrains.training.actions.ShowEditorOld" text="Show Editor Old"
-            description="Highlight Editor Area Old">
-      <add-to-group group-id="CodeMenu" anchor="last"/>
-    </action>
-        <action id="HighlightProjectTreeArea" class="org.jetbrains.training.actions.ShowProjectTree" text="Show Project Tree"
-            description="Highlight Project Tree">
-      <add-to-group group-id="CodeMenu" anchor="last"/>
-    </action>
-        <action id="HighlightStatusBar" class="org.jetbrains.training.actions.ShowStatusBar" text="Show Status Bar"
-            description="Highlight Status Bar">
-      <add-to-group group-id="CodeMenu" anchor="last"/>
-    </action>
-        <action id="HighlightNavBar" class="org.jetbrains.training.actions.ShowNavBar" text="Show Nav Bar"
-            description="Highlight Navigation Bar">
-      <add-to-group group-id="CodeMenu" anchor="last"/>
-    </action>
+    <!--<action id="ShowSmallLog" class="org.jetbrains.training.util.ShowSmallLog" text="Show Small Log"-->
+            <!--description="Show Small Log to log actions">-->
+      <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
+    <!--</action>-->
+    <!--<action id="HighlightEditorArea" class="org.jetbrains.training.actions.ShowEditor" text="Show Editor"-->
+            <!--description="Highlight Editor Area">-->
+      <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
+    <!--</action>-->
+    <!--<action id="HighlightEditorAreaOld" class="org.jetbrains.training.actions.ShowEditorOld" text="Show Editor Old"-->
+            <!--description="Highlight Editor Area Old">-->
+      <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
+    <!--</action>-->
+        <!--<action id="HighlightProjectTreeArea" class="org.jetbrains.training.actions.ShowProjectTree" text="Show Project Tree"-->
+            <!--description="Highlight Project Tree">-->
+      <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
+    <!--</action>-->
+        <!--<action id="HighlightStatusBar" class="org.jetbrains.training.actions.ShowStatusBar" text="Show Status Bar"-->
+            <!--description="Highlight Status Bar">-->
+      <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
+    <!--</action>-->
+        <!--<action id="HighlightNavBar" class="org.jetbrains.training.actions.ShowNavBar" text="Show Nav Bar"-->
+            <!--description="Highlight Navigation Bar">-->
+      <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
+    <!--</action>-->
   </actions>
 
 </idea-plugin>
