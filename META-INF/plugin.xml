@@ -1,5 +1,5 @@
 <idea-plugin version="2">
-  <id>org.jetbrains.training</id>
+  <id>training</id>
   <name>Training Concept</name>
   <version>0.2</version>
   <vendor email="sergey.karashevich@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
@@ -25,8 +25,8 @@
 
 
   <extensions defaultExtensionNs="com.intellij">
-        <fileEditorProvider implementation="org.jetbrains.training.editor.EduEditorProvider"/>
-        <actionPromoter implementation="org.jetbrains.training.editor.actions.LearnActionPromoter"/>
+        <fileEditorProvider implementation="training.editor.EduEditorProvider"/>
+        <actionPromoter implementation="training.editor.actions.LearnActionPromoter"/>
   </extensions>
 
   <application-components>
@@ -39,35 +39,35 @@
 
   <actions>
     <!-- Add your actions here -->
-    <action id="LearnMenu" class="org.jetbrains.training.lesson.CourseMenu" text="Learn"
+    <action id="LearnMenu" class="training.lesson.CourseMenu" text="Learn"
             description="Learn how to use IntelliJ IDEA">
       <add-to-group group-id="MainMenu" relative-to-action="HelpMenu" anchor="before"/>
     </action>
-    <!--<action id="ShowEduUI" class="org.jetbrains.training.actions.ShowEduUi" text="DEBUG: Show Edu UI"-->
+    <!--<action id="ShowEduUI" class="training.actions.ShowEduUi" text="DEBUG: Show Edu UI"-->
             <!--description="DEBUG: Show Edu UI">-->
       <!--<add-to-group group-id="CodeMenu"/>-->
     <!--</action>-->
-    <!--<action id="ShowSmallLog" class="org.jetbrains.training.util.ShowSmallLog" text="Show Small Log"-->
+    <!--<action id="ShowSmallLog" class="training.util.ShowSmallLog" text="Show Small Log"-->
             <!--description="Show Small Log to log actions">-->
       <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
     <!--</action>-->
-    <!--<action id="HighlightEditorArea" class="org.jetbrains.training.actions.ShowEditor" text="Show Editor"-->
+    <!--<action id="HighlightEditorArea" class="training.actions.ShowEditor" text="Show Editor"-->
             <!--description="Highlight Editor Area">-->
       <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
     <!--</action>-->
-    <!--<action id="HighlightEditorAreaOld" class="org.jetbrains.training.actions.ShowEditorOld" text="Show Editor Old"-->
+    <!--<action id="HighlightEditorAreaOld" class="training.actions.ShowEditorOld" text="Show Editor Old"-->
             <!--description="Highlight Editor Area Old">-->
       <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
     <!--</action>-->
-        <!--<action id="HighlightProjectTreeArea" class="org.jetbrains.training.actions.ShowProjectTree" text="Show Project Tree"-->
+        <!--<action id="HighlightProjectTreeArea" class="training.actions.ShowProjectTree" text="Show Project Tree"-->
             <!--description="Highlight Project Tree">-->
       <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
     <!--</action>-->
-        <!--<action id="HighlightStatusBar" class="org.jetbrains.training.actions.ShowStatusBar" text="Show Status Bar"-->
+        <!--<action id="HighlightStatusBar" class="training.actions.ShowStatusBar" text="Show Status Bar"-->
             <!--description="Highlight Status Bar">-->
       <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
     <!--</action>-->
-        <!--<action id="HighlightNavBar" class="org.jetbrains.training.actions.ShowNavBar" text="Show Nav Bar"-->
+        <!--<action id="HighlightNavBar" class="training.actions.ShowNavBar" text="Show Nav Bar"-->
             <!--description="Highlight Navigation Bar">-->
       <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
     <!--</action>-->
