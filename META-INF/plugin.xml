@@ -27,13 +27,14 @@
   <extensions defaultExtensionNs="com.intellij">
         <fileEditorProvider implementation="training.editor.EduEditorProvider"/>
         <actionPromoter implementation="training.editor.actions.LearnActionPromoter"/>
+      <applicationService
+              serviceInterface="training.lesson.CourseManager"
+              serviceImplementation="training.lesson.CourseManager">
+      </applicationService>
   </extensions>
 
   <application-components>
     <!-- Add your application components here -->
-      <component>
-    <implementation-class>training.lesson.CourseManager</implementation-class>
-  </component>
   </application-components>
 
   <project-components>
