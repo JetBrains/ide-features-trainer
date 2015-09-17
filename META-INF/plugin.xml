@@ -55,7 +55,7 @@
             description="Show Small Log to log actions">
       <add-to-group group-id="CodeMenu" anchor="last"/>
     </action>
-      <action id="HideProjectTreeAction" class="training.editor.actions.HideProjectTreeAcion" text="Hide Project Tree"
+      <action id="HideProjectTreeAction" class="training.editor.actions.HideProjectTreeAction" text="Hide Project Tree"
             description="Hide Project Tree">
       <add-to-group group-id="CodeMenu" anchor="last"/>
     </action>
