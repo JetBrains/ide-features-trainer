@@ -1,20 +1,21 @@
 <idea-plugin version="2">
   <id>training</id>
   <name>Training Concept</name>
-  <version>0.2</version>
+  <version>0.3</version>
   <vendor email="sergey.karashevich@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
 
   <description><![CDATA[
       This IntelliJ IDEA plugin helps use IDE productively.<br>
+      Plugin contains 3 basic courses: Editor Basics, Completions, Refactorings
     ]]></description>
 
   <change-notes><![CDATA[
-      Menu items has been implemented.
+        Refactorings has been added
     ]]>
   </change-notes>
 
   <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
-  <idea-version since-build="139"/>
+  <idea-version since-build="142"/>
 
   <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
        on how to target different products -->
@@ -51,14 +52,14 @@
             <!--description="DEBUG: Show Edu UI">-->
       <!--<add-to-group group-id="CodeMenu"/>-->
     <!--</action>-->
-    <action id="ShowSmallLog" class="training.util.ShowSmallLog" text="Show Small Log"
-            description="Show Small Log to log actions">
-      <add-to-group group-id="CodeMenu" anchor="last"/>
-    </action>
-      <action id="HideProjectTreeAction" class="training.editor.actions.HideProjectTreeAction" text="Hide Project Tree"
-            description="Hide Project Tree">
-      <add-to-group group-id="CodeMenu" anchor="last"/>
-    </action>
+    <!--<action id="ShowSmallLog" class="training.util.ShowSmallLog" text="Show Small Log"-->
+            <!--description="Show Small Log to log actions">-->
+      <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
+    <!--</action>-->
+      <!--<action id="HideProjectTreeAction" class="training.editor.actions.HideProjectTreeAction" text="Hide Project Tree"-->
+            <!--description="Hide Project Tree">-->
+      <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
+    <!--</action>-->
     <!--<action id="HighlightEditorArea" class="training.actions.ShowEditor" text="Show Editor"-->
             <!--description="Highlight Editor Area">-->
       <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
