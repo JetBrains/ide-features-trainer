@@ -15,15 +15,13 @@
   </change-notes>
 
   <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
-  <idea-version since-build="142"/>
+  <idea-version since-build="141"/>
 
   <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
        on how to target different products -->
   <!-- uncomment to enable plugin in all products
   <depends>com.intellij.modules.lang</depends>
   -->
-
-
 
   <extensions defaultExtensionNs="com.intellij">
         <fileEditorProvider implementation="training.editor.EduEditorProvider"/>
