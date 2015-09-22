@@ -50,10 +50,10 @@
             <!--description="DEBUG: Show Edu UI">-->
       <!--<add-to-group group-id="CodeMenu"/>-->
     <!--</action>-->
-    <!--<action id="ShowSmallLog" class="training.util.ShowSmallLog" text="Show Small Log"-->
-            <!--description="Show Small Log to log actions">-->
-      <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
-    <!--</action>-->
+    <action id="ShowSmallLog" class="training.util.ShowSmallLog" text="Show Small Log"
+            description="Show Small Log to log actions">
+      <add-to-group group-id="CodeMenu" anchor="last"/>
+    </action>
       <!--<action id="HideProjectTreeAction" class="training.editor.actions.HideProjectTreeAction" text="Hide Project Tree"-->
             <!--description="Hide Project Tree">-->
       <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
