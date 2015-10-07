@@ -78,6 +78,11 @@
             <!--description="Highlight Navigation Bar">-->
       <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
     <!--</action>-->
+      <action id="exportAllLessonsToFile" class="training.actions.ExportAllLessonsToFile"
+              text="Export All Lessons to File" description="Export all lessons from courses to external file">
+            <add-to-group group-id="CodeMenu" anchor="last"/>
+          <keyboard-shortcut keymap="$default" first-keystroke="shift meta alt X"/>
+      </action>
   </actions>
 
 </idea-plugin>
