@@ -23,7 +23,7 @@
   <depends>com.intellij.modules.lang</depends>
   -->
 
-  <extensions defaultExtensionNs="com.intellij">
+  <extensions defaultExtensionNs="com.intellij">¡
         <fileEditorProvider implementation="training.editor.EduEditorProvider"/>
         <actionPromoter implementation="training.editor.actions.EduActionPromoter"/>
       <applicationService
