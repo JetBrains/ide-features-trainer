@@ -1,16 +1,16 @@
 <idea-plugin version="2">
   <id>training</id>
   <name>Training Concept</name>
-  <version>0.3</version>
+  <version>0.3.2</version>
   <vendor email="sergey.karashevich@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
 
   <description><![CDATA[
       This IntelliJ IDEA plugin helps use IDE productively.<br>
-      Plugin contains 4 basic courses: Editor Basics, Completions, Refactorings, Formatting
+      Plugin contains 5 basic courses: Editor Basics, Completions, Refactorings, Formatting, Navigation
     ]]></description>
 
   <change-notes><![CDATA[
-        Formatting Course has been added, a new cross-link system between lessons
+        Navigation Course has been added; EduProject for non-scratch lessons
     ]]>
   </change-notes>
 
