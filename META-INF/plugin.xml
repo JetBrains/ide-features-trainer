@@ -50,10 +50,10 @@
             <!--description="DEBUG: Show Edu UI">-->
       <!--<add-to-group group-id="CodeMenu"/>-->
     <!--</action>-->
-    <action id="ShowSmallLog" class="training.util.ShowSmallLog" text="Show Small Log"
-            description="Show Small Log to log actions">
-      <add-to-group group-id="CodeMenu" anchor="last"/>
-    </action>
+    <!--<action id="ShowSmallLog" class="training.util.ShowSmallLog" text="Show Small Log"-->
+            <!--description="Show Small Log to log actions">-->
+      <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
+    <!--</action>-->
       <!--<action id="HideProjectTreeAction" class="training.editor.actions.HideProjectTreeAction" text="Hide Project Tree"-->
             <!--description="Hide Project Tree">-->
       <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
@@ -78,11 +78,11 @@
             <!--description="Highlight Navigation Bar">-->
       <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
     <!--</action>-->
-      <action id="exportAllLessonsToFile" class="training.actions.ExportAllLessonsToFile"
-              text="Export All Lessons to File" description="Export all lessons from courses to external file">
-            <add-to-group group-id="CodeMenu" anchor="last"/>
-          <keyboard-shortcut keymap="$default" first-keystroke="shift meta alt X"/>
-      </action>
+      <!--<action id="exportAllLessonsToFile" class="training.actions.ExportAllLessonsToFile"-->
+              <!--text="Export All Lessons to File" description="Export all lessons from courses to external file">-->
+            <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
+          <!--<keyboard-shortcut keymap="$default" first-keystroke="shift meta alt X"/>-->
+      <!--</action>-->
   </actions>
 
 </idea-plugin>
