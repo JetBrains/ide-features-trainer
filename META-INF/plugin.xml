@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>training</id>
   <name>Training Concept</name>
-  <version>0.3.3</version>
+  <version>0.3.4</version>
   <vendor email="sergey.karashevich@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
 
   <description><![CDATA[
@@ -10,7 +10,7 @@
     ]]></description>
 
   <change-notes><![CDATA[
-        Navigation Course has been added; EduProject for non-scratch lessons; fixed new EduProject path
+        Navigation Course has been added; EduProject for non-scratch lessons; fixed new EduProject path; fixed Jump to Source lesson
     ]]>
   </change-notes>
 
@@ -78,11 +78,11 @@
             <!--description="Highlight Navigation Bar">-->
       <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
     <!--</action>-->
-      <!--<action id="exportAllLessonsToFile" class="training.actions.ExportAllLessonsToFile"-->
-              <!--text="Export All Lessons to File" description="Export all lessons from courses to external file">-->
-            <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
-          <!--<keyboard-shortcut keymap="$default" first-keystroke="shift meta alt X"/>-->
-      <!--</action>-->
+      <action id="showEduLog" class="training.actions.ShowEducationLog"
+              text="Show Education Log in" description="Show Education Log in File Manager">
+            <add-to-group group-id="HelpMenu" relative-to-action="ShowLog" anchor="after"/>
+          <keyboard-shortcut keymap="$default" first-keystroke="shift meta alt X"/>
+      </action>
   </actions>
 
 </idea-plugin>
