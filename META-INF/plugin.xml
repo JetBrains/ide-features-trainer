@@ -50,10 +50,10 @@
             <!--description="DEBUG: Show Edu UI">-->
       <!--<add-to-group group-id="CodeMenu"/>-->
     <!--</action>-->
-    <!--<action id="ShowSmallLog" class="training.util.ShowSmallLog" text="Show Small Log"-->
-            <!--description="Show Small Log to log actions">-->
-      <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
-    <!--</action>-->
+    <action id="ShowSmallLog" class="training.util.ShowSmallLog" text="Show Small Log"
+            description="Show Small Log to log actions">
+      <add-to-group group-id="CodeMenu" anchor="last"/>
+    </action>
       <!--<action id="HideProjectTreeAction" class="training.editor.actions.HideProjectTreeAction" text="Hide Project Tree"-->
             <!--description="Hide Project Tree">-->
       <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
@@ -78,6 +78,10 @@
             <!--description="Highlight Navigation Bar">-->
       <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
     <!--</action>-->
+      <action id="activateDemoMode" class="training.actions.ActivateDemoModeAction"
+              text="Activate Demo Mode" description="Activate Demo Mode">
+        <add-to-group group-id="CodeMenu" anchor="last"/>
+      </action>
       <action id="showEduLog" class="training.actions.ShowEducationLog"
               text="Show Education Log in" description="Show Education Log in File Manager">
             <add-to-group group-id="HelpMenu" relative-to-action="ShowLog" anchor="after"/>
