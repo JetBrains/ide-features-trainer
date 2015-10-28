@@ -30,6 +30,10 @@
               serviceInterface="training.lesson.CourseManager"
               serviceImplementation="training.lesson.CourseManager">
       </applicationService>
+    <applicationService
+            serviceInterface="training.editor.EduEditorManager"
+            serviceImplementation="training.editor.EduEditorManager">
+    </applicationService>
   </extensions>
 
   <application-components>
