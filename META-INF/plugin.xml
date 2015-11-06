@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>training</id>
-  <name>Training Concept</name>
-  <version>0.3.4</version>
+  <name>Training</name>
+  <version>0.4.1</version>
   <vendor email="sergey.karashevich@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
 
   <description><![CDATA[
@@ -23,7 +23,7 @@
   <depends>com.intellij.modules.lang</depends>
   -->
 
-  <extensions defaultExtensionNs="com.intellij">¡
+  <extensions defaultExtensionNs="com.intellij">
         <fileEditorProvider implementation="training.editor.EduEditorProvider"/>
         <actionPromoter implementation="training.editor.actions.EduActionPromoter"/>
       <applicationService
@@ -54,10 +54,10 @@
             <!--description="DEBUG: Show Edu UI">-->
       <!--<add-to-group group-id="CodeMenu"/>-->
     <!--</action>-->
-    <action id="ShowSmallLog" class="training.util.ShowSmallLog" text="Show Small Log"
-            description="Show Small Log to log actions">
-      <add-to-group group-id="CodeMenu" anchor="last"/>
-    </action>
+    <!--<action id="ShowSmallLog" class="util.ShowSmallLog" text="Show Small Log"-->
+            <!--description="Show Small Log to log actions">-->
+      <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
+    <!--</action>-->
       <!--<action id="HideProjectTreeAction" class="training.editor.actions.HideProjectTreeAction" text="Hide Project Tree"-->
             <!--description="Hide Project Tree">-->
       <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
