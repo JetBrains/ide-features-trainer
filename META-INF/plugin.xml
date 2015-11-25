@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>training</id>
   <name>Training</name>
-  <version>0.4.2</version>
+  <version>0.4.3</version>
   <vendor email="sergey.karashevich@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
 
   <description><![CDATA[
@@ -10,7 +10,7 @@
     ]]></description>
 
   <change-notes><![CDATA[
-      Fixed Comment lesson (TP-7), Completions course (TP-11), Rename lesson (TP-13), Extract Variable (TP-15, TP-20), Extract Method (TP-16), Folding lesson (TP-17), Jump to Source (TP-3, )
+      Fixed Comment lesson (TP-7), Completions course (TP-11), Rename lesson (TP-13), Extract Variable (TP-15, TP-20), Extract Method (TP-16), Folding lesson (TP-17), Jump to Source (TP-3), Occurrences (TP-22). To see more issues go to http://training.myjetbrains.com/youtrack/issues
     ]]>
   </change-notes>
 
