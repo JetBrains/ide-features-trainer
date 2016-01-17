@@ -1,7 +1,7 @@
 # Training Plugin
 This IntelliJ IDEA plugin helps use IDE productively
 
-**System requirements**: IntelliJ IDEA 14 
+**System requirements**: IntelliJ IDEA 15 
 
 **Prerequisites**: To run this plugin you need to download https://github.com/karashevich/training/blob/master/training.zip and add this file as a plugin from IntelliJ IDEA.
 
