@@ -91,6 +91,10 @@
             <add-to-group group-id="HelpMenu" relative-to-action="ShowLog" anchor="after"/>
           <keyboard-shortcut keymap="$default" first-keystroke="shift meta alt X"/>
       </action>
+    <action id="openLessonDialog" class="training.actions.OpenLessonDialog" text="openLessonDialog"
+            description="openLessonDialog">
+      <add-to-group group-id="HelpMenu" anchor="last"/>
+    </action>
   </actions>
 
 </idea-plugin>
