@@ -24,29 +24,35 @@
   -->
 
   <extensions defaultExtensionNs="com.intellij">
-        <fileEditorProvider implementation="training.editor.EduEditorProvider"/>
+    <statistics.usagesCollector implementation="training.statistic.LessonUsageCollector"/>
+
+    <fileEditorProvider implementation="training.editor.EduEditorProvider"/>
         <actionPromoter implementation="training.editor.actions.EduActionPromoter"/>
       <applicationService
-              serviceInterface="training.lesson.CourseManager"
-              serviceImplementation="training.lesson.CourseManager">
+              serviceInterface="training.learn.CourseManager"
+              serviceImplementation="training.learn.CourseManager">
       </applicationService>
     <applicationService
             serviceInterface="training.editor.EduEditorManager"
             serviceImplementation="training.editor.EduEditorManager">
     </applicationService>
+
+    <toolWindow id="Learn" anchor="left" icon="LearnIcons.Toolwindows.LearnToolWindowIcon" factoryClass="training.ui.LearnToolWindowFactory" conditionClass="training.ui.LearnCondition"/>
   </extensions>
 
   <application-components>
-    <!-- Add your application components here -->
   </application-components>
 
   <project-components>
-    <!-- Add your project components here -->
+    <component>
+      <implementation-class>training.component.LearnProjectComponent</implementation-class>
+      <interface-class>training.component.LearnProjectComponent</interface-class>
+    </component>
   </project-components>
 
   <actions>
     <!-- Add your actions here -->
-    <action id="LearnMenu" class="training.lesson.CourseMenu" text="Learn"
+    <action id="LearnMenu" class="training.learn.CourseMenu" text="Learn"
             description="Learn how to use IntelliJ IDEA">
       <add-to-group group-id="MainMenu" relative-to-action="HelpMenu" anchor="before"/>
     </action>
