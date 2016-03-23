@@ -6,11 +6,11 @@
 
   <description><![CDATA[
       This IntelliJ IDEA plugin helps use IDE productively.<br>
-      Plugin contains 5 basic courses: Editor Basics, Completions, Refactorings, Formatting, Navigation
+      Plugin contains 5 basic modules: Editor Basics, Completions, Refactorings, Formatting, Navigation
     ]]></description>
 
   <change-notes><![CDATA[
-      Fixed Comment lesson (TP-7), Completions course (TP-11), Rename lesson (TP-13), Extract Variable (TP-15, TP-20), Extract Method (TP-16), Folding lesson (TP-17), Jump to Source (TP-3), Occurrences (TP-22). To see more issues go to http://training.myjetbrains.com/youtrack/issues
+      Fixed Comment lesson (TP-7), Completions module (TP-11), Rename lesson (TP-13), Extract Variable (TP-15, TP-20), Extract Method (TP-16), Folding lesson (TP-17), Jump to Source (TP-3), Occurrences (TP-22). To see more issues go to http://training.myjetbrains.com/youtrack/issues
     ]]>
   </change-notes>
 
@@ -32,10 +32,6 @@
               serviceInterface="training.learn.CourseManager"
               serviceImplementation="training.learn.CourseManager">
       </applicationService>
-    <applicationService
-            serviceInterface="training.editor.EduEditorManager"
-            serviceImplementation="training.editor.EduEditorManager">
-    </applicationService>
 
     <toolWindow id="Learn" anchor="left" icon="LearnIcons.Toolwindows.LearnToolWindowIcon" factoryClass="training.ui.LearnToolWindowFactory" conditionClass="training.ui.LearnCondition"/>
   </extensions>
@@ -52,10 +48,6 @@
 
   <actions>
     <!-- Add your actions here -->
-    <action id="LearnMenu" class="training.learn.CourseMenu" text="Learn"
-            description="Learn how to use IntelliJ IDEA">
-      <add-to-group group-id="MainMenu" relative-to-action="HelpMenu" anchor="before"/>
-    </action>
     <!--<action id="ShowEduUI" class="training.actions.ShowEduUi" text="DEBUG: Show Edu UI"-->
             <!--description="DEBUG: Show Edu UI">-->
       <!--<add-to-group group-id="CodeMenu"/>-->
@@ -88,15 +80,6 @@
             <!--description="Highlight Navigation Bar">-->
       <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
     <!--</action>-->
-      <action id="activateDemoMode" class="training.actions.ActivateDemoModeAction"
-              text="Activate Demo Mode" description="Activate Demo Mode">
-        <add-to-group group-id="CodeMenu" anchor="last"/>
-      </action>
-      <action id="showEduLog" class="training.actions.ShowEducationLog"
-              text="Show Education Log in" description="Show Education Log in File Manager">
-            <add-to-group group-id="HelpMenu" relative-to-action="ShowLog" anchor="after"/>
-          <keyboard-shortcut keymap="$default" first-keystroke="shift meta alt X"/>
-      </action>
     <action id="openLessonDialog" class="training.actions.OpenLessonDialog" text="openLessonDialog"
             description="openLessonDialog">
       <add-to-group group-id="HelpMenu" anchor="last"/>
