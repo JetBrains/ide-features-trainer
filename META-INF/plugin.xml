@@ -26,8 +26,7 @@
   <extensions defaultExtensionNs="com.intellij">
     <statistics.usagesCollector implementation="training.statistic.LessonUsageCollector"/>
 
-    <!--<fileEditorProvider implementation="training.editor.EduEditorProvider"/>-->
-        <actionPromoter implementation="training.editor.actions.EduActionPromoter"/>
+        <actionPromoter implementation="training.editor.actions.LearnActionPromoter"/>
       <applicationService
               serviceInterface="training.learn.CourseManager"
               serviceImplementation="training.learn.CourseManager">
@@ -47,39 +46,6 @@
   </project-components>
 
   <actions>
-    <!-- Add your actions here -->
-    <!--<action id="ShowEduUI" class="training.actions.ShowEduUi" text="DEBUG: Show Edu UI"-->
-            <!--description="DEBUG: Show Edu UI">-->
-      <!--<add-to-group group-id="CodeMenu"/>-->
-    <!--</action>-->
-    <!--<action id="ShowSmallLog" class="util.ShowSmallLog" text="Show Small Log"-->
-            <!--description="Show Small Log to log actions">-->
-      <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
-    <!--</action>-->
-      <!--<action id="HideProjectTreeAction" class="training.editor.actions.HideProjectTreeAction" text="Hide Project Tree"-->
-            <!--description="Hide Project Tree">-->
-      <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
-    <!--</action>-->
-    <!--<action id="HighlightEditorArea" class="training.actions.ShowEditor" text="Show Editor"-->
-            <!--description="Highlight Editor Area">-->
-      <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
-    <!--</action>-->
-    <!--<action id="HighlightEditorAreaOld" class="training.actions.ShowEditorOld" text="Show Editor Old"-->
-            <!--description="Highlight Editor Area Old">-->
-      <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
-    <!--</action>-->
-        <!--<action id="HighlightProjectTreeArea" class="training.actions.ShowProjectTree" text="Show Project Tree"-->
-            <!--description="Highlight Project Tree">-->
-      <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
-    <!--</action>-->
-        <!--<action id="HighlightStatusBar" class="training.actions.ShowStatusBar" text="Show Status Bar"-->
-            <!--description="Highlight Status Bar">-->
-      <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
-    <!--</action>-->
-        <!--<action id="HighlightNavBar" class="training.actions.ShowNavBar" text="Show Nav Bar"-->
-            <!--description="Highlight Navigation Bar">-->
-      <!--<add-to-group group-id="CodeMenu" anchor="last"/>-->
-    <!--</action>-->
     <action id="openLessonDialog" class="training.actions.OpenLessonDialog" text="openLessonDialog"
             description="openLessonDialog">
       <add-to-group group-id="HelpMenu" anchor="last"/>
