@@ -1,7 +1,7 @@
 <idea-plugin version="2">
   <id>training</id>
   <name>Training</name>
-  <version>0.5.3</version>
+  <version>0.5.4</version>
   <vendor email="sergey.karashevich@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
 
   <description><![CDATA[
@@ -10,7 +10,7 @@
     ]]></description>
 
   <change-notes><![CDATA[
-      Migrated to a tool window from editor area (TP-33). LessonPanel is scrollable (TP-40). UI fixes (TP-35), (TP-36) and (TP-37). Editor disposed error (TP-34) To see more issues go to http://training.myjetbrains.com/youtrack/issues
+      Migrated to a tool window from editor area (TP-33). LessonPanel is scrollable (TP-40). UI fixes (TP-35), (TP-36) and (TP-37), editor disposed error (TP-34), LearnToolWindow appears each IDEA startup (TP-42) To see more issues go to http://training.myjetbrains.com/youtrack/issues
     ]]>
   </change-notes>
 
