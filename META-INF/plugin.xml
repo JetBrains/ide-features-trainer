@@ -25,6 +25,11 @@
               serviceInterface="training.learn.CourseManager"
               serviceImplementation="training.learn.CourseManager">
       </applicationService>
+      <applicationService
+              serviceInterface="training.learn.LessonManager"
+              serviceImplementation="training.learn.LessonManager">
+      </applicationService>
+
 
     <toolWindow id="Learn" anchor="left" icon="LearnIcons.Toolwindows.LearnToolWindowIcon" factoryClass="training.ui.LearnToolWindowFactory" conditionClass="training.ui.LearnCondition"/>
   </extensions>
