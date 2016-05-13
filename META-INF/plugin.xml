@@ -31,7 +31,7 @@
       </applicationService>
 
 
-    <toolWindow id="Learn" anchor="left" icon="LearnIcons.Toolwindows.LearnToolWindowIcon" factoryClass="training.ui.LearnToolWindowFactory" conditionClass="training.ui.LearnCondition"/>
+    <toolWindow id="Learn" anchor="left" factoryClass="training.ui.LearnToolWindowFactory" conditionClass="training.ui.LearnCondition"/>
   </extensions>
 
   <application-components>
