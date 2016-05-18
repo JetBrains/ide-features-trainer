@@ -1,7 +1,6 @@
 <idea-plugin version="2">
   <id>training</id>
   <name>Training</name>
-  <version>0.6.6</version>
   <vendor email="sergey.karashevich@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
 
   <description><![CDATA[
@@ -15,7 +14,7 @@
   </change-notes>
 
   <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
-  <idea-version since-build="146"/>
+  <idea-version since-build="162"/>
 
   <extensions defaultExtensionNs="com.intellij">
     <statistics.usagesCollector implementation="training.statistic.LessonUsageCollector"/>
