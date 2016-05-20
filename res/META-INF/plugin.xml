@@ -44,6 +44,7 @@
   </project-components>
 
   <actions>
+    <action id="learn.open.lesson" text="Open Lesson" class="training.actions.OpenLessonAction"/>
   </actions>
 
 </idea-plugin>
