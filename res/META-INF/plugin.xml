@@ -1,50 +1,57 @@
 <idea-plugin version="2">
-  <id>training</id>
-  <name>Training</name>
-  <vendor email="sergey.karashevich@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
+    <id>training</id>
+    <name>Training</name>
+    <vendor email="sergey.karashevich@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
 
-  <description><![CDATA[
+    <description><![CDATA[
       This IntelliJ IDEA plugin helps use IDE productively.<br>
       Plugin contains 5 basic modules: Editor Basics, Completions, Refactorings, Formatting, Navigation
     ]]></description>
 
-  <change-notes><![CDATA[
+    <change-notes><![CDATA[
       New UI (supports Darcula laf). Migrated to a tool window from editor area (TP-33). LessonPanel is scrollable (TP-40). UI fixes (TP-35), (TP-36) and (TP-37), editor disposed error (TP-34), LearnToolWindow appears each IDEA startup (TP-42), Learn Project doesn't open lesson (TP-38). Fixed annotations error (TP-31). To see more issues go to http://training.myjetbrains.com/youtrack/issues
     ]]>
-  </change-notes>
+    </change-notes>
 
-  <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
-  <idea-version since-build="162"/>
+    <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+    <idea-version since-build="162"/>
 
-  <extensions defaultExtensionNs="com.intellij">
-    <statistics.usagesCollector implementation="training.statistic.LessonUsageCollector"/>
+    <extensions defaultExtensionNs="com.intellij">
+        <statistics.usagesCollector implementation="training.statistic.LessonUsageCollector"/>
 
         <actionPromoter implementation="training.editor.actions.LearnActionPromoter"/>
-      <applicationService
-              serviceInterface="training.learn.CourseManager"
-              serviceImplementation="training.learn.CourseManager">
-      </applicationService>
-      <applicationService
-              serviceInterface="training.learn.LessonManager"
-              serviceImplementation="training.learn.LessonManager">
-      </applicationService>
+        <applicationService
+                serviceInterface="training.learn.CourseManager"
+                serviceImplementation="training.learn.CourseManager">
+        </applicationService>
+        <applicationService
+                serviceInterface="training.learn.LessonManager"
+                serviceImplementation="training.learn.LessonManager">
+        </applicationService>
 
 
-    <toolWindow id="Learn" anchor="left" factoryClass="training.ui.LearnToolWindowFactory" conditionClass="training.ui.LearnCondition"/>
-  </extensions>
+        <toolWindow id="Learn" anchor="left" factoryClass="training.ui.LearnToolWindowFactory"
+                    conditionClass="training.ui.LearnCondition"/>
+    </extensions>
 
-  <application-components>
-  </application-components>
+    <application-components>
+    </application-components>
 
-  <project-components>
-    <component>
-      <implementation-class>training.component.LearnProjectComponent</implementation-class>
-      <interface-class>training.component.LearnProjectComponent</interface-class>
-    </component>
-  </project-components>
+    <project-components>
+        <component>
+            <implementation-class>training.component.LearnProjectComponent</implementation-class>
+            <interface-class>training.component.LearnProjectComponent</interface-class>
+        </component>
+    </project-components>
 
-  <actions>
-    <action id="learn.open.lesson" text="Open Lesson" class="training.actions.OpenLessonAction"/>
-  </actions>
+    <actions>
+        <!--<add-to-group group-id="WelcomeScreen.QuickStart"/>-->
+        <!--</action>-->
+        <action id="Learn.WelcomeScreen.StartLearn" class="training.actions.StartLearnAction" icon="AllIcons.General.Run">
+            <add-to-group group-id="WelcomeScreen.QuickStart" anchor="first"/>
+        </action>
+
+        <action id="learn.open.lesson" text="Open Lesson" class="training.actions.OpenLessonAction"/>
+    </actions>
 
 </idea-plugin>
