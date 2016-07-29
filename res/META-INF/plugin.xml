@@ -28,6 +28,10 @@
                 serviceInterface="training.learn.LessonManager"
                 serviceImplementation="training.learn.LessonManager">
         </applicationService>
+        <applicationService
+                serviceInterface="training.ui.FeedbackManager"
+                serviceImplementation="training.ui.FeedbackManager">
+        </applicationService>
 
 
         <toolWindow id="Learn" anchor="left" factoryClass="training.ui.LearnToolWindowFactory"
@@ -51,6 +55,11 @@
             <add-to-group group-id="WelcomeScreen.QuickStart" anchor="first"/>
         </action>
 
+        <action id="learn.next.lesson" class="training.actions.NextLessonAction" text="Next lesson">
+            <keyboard-shortcut first-keystroke="alt shift RIGHT" keymap="$default"/>
+            <keyboard-shortcut first-keystroke="control shift RIGHT" keymap="Mac OS X 10.5+"/>
+            <keyboard-shortcut first-keystroke="control shift RIGHT" keymap="Mac OS X"/>
+        </action>
         <action id="learn.open.lesson" text="Open Lesson" class="training.actions.OpenLessonAction"/>
     </actions>
 
