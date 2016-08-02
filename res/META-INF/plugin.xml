@@ -51,7 +51,7 @@
     <actions>
         <!--<add-to-group group-id="WelcomeScreen.QuickStart"/>-->
         <!--</action>-->
-        <action id="Learn.WelcomeScreen.StartLearn" class="training.actions.StartLearnAction" icon="AllIcons.General.Run">
+        <action id="Learn.WelcomeScreen.StartLearn" class="training.actions.StartLearnAction" icon="/img/chevron.png">
             <add-to-group group-id="WelcomeScreen.QuickStart" anchor="first"/>
         </action>
 
