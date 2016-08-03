@@ -32,6 +32,18 @@
                 serviceInterface="training.ui.FeedbackManager"
                 serviceImplementation="training.ui.FeedbackManager">
         </applicationService>
+        <applicationService
+                serviceInterface="training.statistic.RequestService"
+                serviceImplementation="training.statistic.SimpleRequestService">
+        </applicationService>
+        <applicationService
+                serviceInterface="training.util.UrlProvider"
+                serviceImplementation="training.util.InternalUrlProvider">
+        </applicationService>
+        <applicationService
+                serviceInterface="training.statistic.FeedbackSender"
+                serviceImplementation="training.statistic.FeedbackSender">
+        </applicationService>
 
 
         <toolWindow id="Learn" anchor="left" factoryClass="training.ui.LearnToolWindowFactory"
@@ -43,14 +55,12 @@
 
     <project-components>
         <component>
-            <implementation-class>training.component.LearnProjectComponent</implementation-class>
-            <interface-class>training.component.LearnProjectComponent</interface-class>
+            <implementation-class>training.components.LearnProjectComponent</implementation-class>
+            <interface-class>training.components.LearnProjectComponent</interface-class>
         </component>
     </project-components>
 
     <actions>
-        <!--<add-to-group group-id="WelcomeScreen.QuickStart"/>-->
-        <!--</action>-->
         <action id="Learn.WelcomeScreen.StartLearn" class="training.actions.StartLearnAction" icon="/img/chevron.png">
             <add-to-group group-id="WelcomeScreen.QuickStart" anchor="first"/>
         </action>
