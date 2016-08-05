@@ -62,7 +62,7 @@
 
     <actions>
         <action id="Learn.WelcomeScreen.StartLearn" class="training.actions.StartLearnAction" icon="/img/chevron.png">
-            <add-to-group group-id="WelcomeScreen.QuickStart" anchor="first"/>
+            <add-to-group group-id="WelcomeScreen.QuickStart" anchor="last"/>
         </action>
 
         <action id="learn.next.lesson" class="training.actions.NextLessonAction" text="Next lesson">
