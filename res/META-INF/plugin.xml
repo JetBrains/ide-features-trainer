@@ -44,6 +44,10 @@
                 serviceInterface="training.statistic.FeedbackSender"
                 serviceImplementation="training.statistic.FeedbackSender">
         </applicationService>
+        <applicationService
+                serviceInterface="training.ui.LearnUIManager"
+                serviceImplementation="training.ui.LearnUIManager">
+        </applicationService>
 
 
         <toolWindow id="Learn" anchor="left" factoryClass="training.ui.LearnToolWindowFactory"
