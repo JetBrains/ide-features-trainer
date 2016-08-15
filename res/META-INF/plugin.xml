@@ -4,7 +4,7 @@
     <vendor email="sergey.karashevich@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
 
     <description><![CDATA[
-      A good way to become familiar with IntelliJ IDEA for newcomers. The plugin includes lessons about editor basics, completions, refactorings and code assistance. And permanently updated with new topics.
+      A good way to become familiar with IntelliJ IDEA for newcomers. The plugin includes lessons about editor basics, completions, refactorings and code assistance. And it is permanently updated with new topics.
     ]]></description>
 
     <change-notes><![CDATA[
