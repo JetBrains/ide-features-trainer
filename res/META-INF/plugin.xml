@@ -1,6 +1,6 @@
 <idea-plugin version="2">
     <id>training</id>
-    <name>Training</name>
+    <name>IDE Features Trainer</name>
     <vendor email="sergey.karashevich@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
 
     <description>
