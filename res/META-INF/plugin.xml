@@ -1,22 +1,45 @@
-<idea-plugin version="2">
+<idea-plugin>
     <id>training</id>
     <name>IDE Features Trainer</name>
     <vendor email="sergey.karashevich@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
 
     <description>
-        &lt;p&gt;We created this plugin especially for newcomers, people who are not familiar with the IDE features. The main idea of the plugin is to offer IntelliJ IDEA shortcuts and features training right inside the IDE. No need to read a long manual or search for a proper screencast for dummies, just install this plugin, open IntelliJ IDEA and start learning in an interactive way and getting used to your new IDE.&lt;/p&gt;
+        &lt;p&gt;We created this plugin especially for newcomers, people who are not familiar with the IDE features. The
+        main idea of the plugin is to offer IntelliJ IDEA shortcuts and features training right inside the IDE. No need
+        to read a long manual or search for a proper screencast for dummies, just install this plugin, open IntelliJ
+        IDEA and start learning in an interactive way and getting used to your new IDE.&lt;/p&gt;
 
-        &lt;p&gt;The course is divided into 5 modules: Editor Basics, Completions, Refactorings, Code Assistance and Navigation, with several lessons in a module. Each lesson includes short tasks requiring one or two shortcuts to complete.&lt;/p&gt;
+        &lt;p&gt;The course is divided into 5 modules: Editor Basics, Completions, Refactorings, Code Assistance and
+        Navigation, with several lessons in a module. Each lesson includes short tasks requiring one or two shortcuts to
+        complete.&lt;/p&gt;
 
-        &lt;p&gt;We are working on new lessons. If you have already finished this course, come back here soon to update the plugin and keep training.&lt;/p&gt;
+        &lt;p&gt;We are working on new lessons. If you have already finished this course, come back here soon to update
+        the plugin and keep training.&lt;/p&gt;
 
-        &lt;p&gt;Feedback is much appreciated: &lt;a href=&quot;http://jb.gg/training-plugin-feedback&quot;&gt;jb.gg/training-plugin-feedback&lt;/a&gt; &lt;/p&gt;
+        &lt;p&gt;Feedback is much appreciated: &lt;a href=&quot;http://jb.gg/training-plugin-feedback&quot;&gt;jb.gg/training-plugin-feedback&lt;/a&gt;
+        &lt;/p&gt;
 
-        &lt;p&gt;For bugs and feature suggests: &lt;a href=&quot;https://training.myjetbrains.com/youtrack/newissue&quot;&gt;https://training.myjetbrains.com/youtrack/newissue&lt;/a&gt; &lt;/p&gt;
+        &lt;p&gt;For bugs and feature suggests: &lt;a href=&quot;https://training.myjetbrains.com/youtrack/newissue&quot;&gt;https://training.myjetbrains.com/youtrack/newissue&lt;/a&gt;
+        &lt;/p&gt;
     </description>
 
+    <depends>com.intellij.modules.platform</depends>
+
+    <depends optional="true" config-file="java-deps.xml">com.intellij.modules.java</depends>
+    <depends optional="true" config-file="python-deps.xml">com.intellij.modules.python</depends>
+    <!--<depends optional="true" config-file="webstorm-deps.xml">com.intellij.modules.webstorm</depends>-->
+    <!--<depends optional="true" config-file="phpstorm-deps.xml">com.jetbrains.php</depends>-->
+    <!--<depends optional="true" config-file="clion-deps.xml">com.intellij.modules.clion</depends>-->
+    <!--<depends optional="true" config-file="rider-deps.xml">com.intellij.modules.rider</depends>-->
+
+    <extensionPoints>a
+        <extensionPoint name="TrainingLangExtension" interface="training.lang.LangSupport"/>
+    </extensionPoints>
+
     <change-notes>
-        &lt;p&gt;Migrated to a tool window from editor area (TP-33). LessonPanel is scrollable (TP-40). UI fixes (TP-35), (TP-36) and (TP-37), editor disposed error (TP-34), LearnToolWindow appears each IDEA startup (TP-42), Learn Project doesn't open lesson (TP-38). Fixed annotations error (TP-31).&lt;/p&gt;
+        &lt;p&gt;Migrated to a tool window from editor area (TP-33). LessonPanel is scrollable (TP-40). UI fixes
+            (TP-35), (TP-36) and (TP-37), editor disposed error (TP-34), LearnToolWindow appears each IDEA startup
+            (TP-42), Learn Project doesn't open lesson (TP-38). Fixed annotations error (TP-31).&lt;/p&gt;
     </change-notes>
 
     <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
@@ -33,6 +56,10 @@
         <applicationService
                 serviceInterface="training.learn.LessonManager"
                 serviceImplementation="training.learn.LessonManager">
+        </applicationService>
+        <applicationService
+                serviceInterface="training.lang.LangManager"
+                serviceImplementation="training.lang.LangManager">
         </applicationService>
         <applicationService
                 serviceInterface="training.ui.FeedbackManager"
@@ -80,7 +107,9 @@
             <keyboard-shortcut first-keystroke="control shift RIGHT" keymap="Mac OS X 10.5+"/>
             <keyboard-shortcut first-keystroke="control shift RIGHT" keymap="Mac OS X"/>
         </action>
-        <action id="learn.open.lesson" text="Open Lesson" class="training.actions.OpenLessonAction"/>
+        <action id="learn.open.lesson" text="Open Lesson" class="training.actions.OpenLessonAction" />
+        <!--TODO: REMOVE THIS ACTION BEFORE RELEASE-->
+        <action id="learn.open.chooseLang" text="Choose Lang" class="training.actions.ShowChooseLangPanelAction" />
     </actions>
 
 </idea-plugin>
