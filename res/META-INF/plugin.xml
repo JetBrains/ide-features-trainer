@@ -32,9 +32,14 @@
     <!--<depends optional="true" config-file="clion-deps.xml">com.intellij.modules.clion</depends>-->
     <!--<depends optional="true" config-file="rider-deps.xml">com.intellij.modules.rider</depends>-->
 
-    <extensionPoints>a
-        <extensionPoint name="TrainingLangExtension" interface="training.lang.LangSupport"/>
+    <extensionPoints>
+        <extensionPoint name="TrainingLangExtension"
+                        beanClass="com.intellij.lang.LanguageExtensionPoint">
+            <with attribute="implementationClass" implements="training.lang.LangSupport"/>
+        </extensionPoint>
     </extensionPoints>
+
+
 
     <change-notes>
         &lt;p&gt;Migrated to a tool window from editor area (TP-33). LessonPanel is scrollable (TP-40). UI fixes
