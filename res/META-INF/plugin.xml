@@ -27,6 +27,7 @@
 
     <depends optional="true" config-file="java-deps.xml">com.intellij.modules.java</depends>
     <depends optional="true" config-file="python-deps.xml">com.intellij.modules.python</depends>
+    <!--<depends optional="true" config-file="objc-deps.xml">com.intellij.modules.cidr.lang</depends>-->
     <!--<depends optional="true" config-file="webstorm-deps.xml">com.intellij.modules.webstorm</depends>-->
     <!--<depends optional="true" config-file="phpstorm-deps.xml">com.jetbrains.php</depends>-->
     <!--<depends optional="true" config-file="clion-deps.xml">com.intellij.modules.clion</depends>-->
@@ -42,9 +43,10 @@
 
 
     <change-notes>
-        &lt;p&gt;Migrated to a tool window from editor area (TP-33). LessonPanel is scrollable (TP-40). UI fixes
-            (TP-35), (TP-36) and (TP-37), editor disposed error (TP-34), LearnToolWindow appears each IDEA startup
-            (TP-42), Learn Project doesn't open lesson (TP-38). Fixed annotations error (TP-31).&lt;/p&gt;
+        &lt;b&gt;Fixed &amp; New:&lt;/b&gt;
+        &lt;ul&gt;
+            &lt;li&gt;NPE: LearnProjectComponent.getLearnStripeButton&lt;/li&gt;
+        &lt;/ul&gt;
     </change-notes>
 
     <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
