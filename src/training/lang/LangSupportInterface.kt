@@ -8,7 +8,7 @@ import com.intellij.openapi.projectRoots.SdkTypeId
 /**
  * @author Sergey Karashevich
  */
-interface LangSupport {
+interface LangSupportInterface {
 
     val FILE_EXTENSION: String
 
@@ -19,7 +19,10 @@ interface LangSupport {
     fun acceptLang(ext: String): Boolean
     fun applyProjectSdk(project: Project): Unit
     fun applyToProjectAfterConfigure(): (Project) -> Unit
-    fun getModuleBuilder(): ModuleBuilder
+    fun getModuleBuilder(): ModuleBuilder?
 
     fun checkSdkCompatibility(sdk: Sdk, sdkTypeId: SdkTypeId)
+    fun needToCheckSDK(): Boolean
+    fun createProject(projectName: String, projectToClose: Project?): Project?
+    fun getProjectFilePath(projectName: String): String
 }

@@ -17,10 +17,10 @@ import training.ui.LearnToolWindowFactory
 @State(name = "TrainingLangManager", storages = arrayOf(Storage("trainingPlugin.xml")))
 class LangManager: PersistentStateComponent<LangManager.State> {
 
-    var supportedLanguagesExtensions: List<LanguageExtensionPoint<LangSupport>> = ExtensionPointName<LanguageExtensionPoint<LangSupport>>(LangSupport.EP_NAME).extensions.toList()
+    var supportedLanguagesExtensions: List<LanguageExtensionPoint<LangSupportInterface>> = ExtensionPointName<LanguageExtensionPoint<LangSupportInterface>>(LangSupportInterface.EP_NAME).extensions.toList()
     val myState = State()
 
-    private var myLangSupport: LangSupport? = null
+    private var myLangSupport: LangSupportInterface? = null
 
     init {
         if (supportedLanguagesExtensions.size == 1) {
@@ -35,7 +35,7 @@ class LangManager: PersistentStateComponent<LangManager.State> {
     fun isLangUndefined() = (myLangSupport == null)
 
     //do not call this if LearnToolWindow with modules or learn views due to reinitViews
-    fun updateLangSupport(langSupport: LangSupport) {
+    fun updateLangSupport(langSupport: LangSupportInterface) {
         myLangSupport = langSupport
         CourseManager.getInstance().updateModules()
         (LearnToolWindowFactory.getMyLearnToolWindow() ?: return).reinitViews()

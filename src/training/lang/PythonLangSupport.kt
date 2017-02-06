@@ -23,7 +23,7 @@ import java.util.*
 /**
  * @author Sergey Karashevich
  */
-class PythonLangSupport : LangSupport {
+class PythonLangSupport : LangSupport() {
 
     private val acceptableLanguages = setOf("python", "html")
     override fun acceptLang(ext: String) = acceptableLanguages.contains(ext.toLowerCase())
@@ -61,7 +61,7 @@ class PythonLangSupport : LangSupport {
     override fun applyToProjectAfterConfigure(): (Project) -> Unit = {}
 
 
-    override fun getModuleBuilder(): ModuleBuilder = PythonModuleBuilder()
+    override fun getModuleBuilder(): ModuleBuilder? = PythonModuleBuilder()
 
     override fun checkSdkCompatibility(sdk: Sdk, sdkTypeId: SdkTypeId) {
         if (sdkTypeId is PythonSdkType) {

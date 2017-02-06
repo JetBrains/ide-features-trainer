@@ -8,7 +8,7 @@ import com.intellij.openapi.actionSystem.ex.ActionUtil
 import com.intellij.util.containers.HashMap
 import com.intellij.util.ui.UIUtil
 import training.lang.LangManager
-import training.lang.LangSupport
+import training.lang.LangSupportInterface
 import training.learn.CourseManager
 import training.learn.LearnBundle
 import training.ui.LearnUIManager
@@ -37,7 +37,7 @@ class LanguageChoosePanel(opaque: Boolean = true, addButton: Boolean = true) : J
     private var gotoModulesViewButton: JButton? = null
     private val myAddButton: Boolean = addButton
 
-    private val myRadioButtonMap = HashMap<JRadioButton, LanguageExtensionPoint<LangSupport>>()
+    private val myRadioButtonMap = HashMap<JRadioButton, LanguageExtensionPoint<LangSupportInterface>>()
     private val buttonGroup = ButtonGroup()
 
     init {
@@ -152,7 +152,8 @@ class LanguageChoosePanel(opaque: Boolean = true, addButton: Boolean = true) : J
         for (langSupportExt in sortedLangSupportExtensions) {
 
             val lessonsCount = CourseManager.getInstance().calcLessonsForLanguage(langSupportExt.instance)
-            val jrb = JRadioButton("${Language.findLanguageByID(langSupportExt.language)!!.displayName} ($lessonsCount lesson${if (lessonsCount != 1) "s" else ""}) ")
+            val lang = Language.findLanguageByID(langSupportExt.language) ?: continue
+            val jrb = JRadioButton("${lang!!.displayName} ($lessonsCount lesson${if (lessonsCount != 1) "s" else ""}) ")
             jrb.isOpaque = false
             buttonGroup.add(jrb)
             //add radio buttons
@@ -201,7 +202,7 @@ class LanguageChoosePanel(opaque: Boolean = true, addButton: Boolean = true) : J
             return UIUtil.getPanelBackground()
     }
 
-    fun getActiveLangSupport(): LangSupport {
+    fun getActiveLangSupport(): LangSupportInterface {
         val activeButton: AbstractButton = buttonGroup.elements.toList().find { button -> button.isSelected } ?: throw Exception("Unable to get active language")
         assert (activeButton is JRadioButton)
         assert (myRadioButtonMap.containsKey(activeButton))

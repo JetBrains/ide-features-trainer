@@ -27,7 +27,7 @@
 
     <depends optional="true" config-file="java-deps.xml">com.intellij.modules.java</depends>
     <depends optional="true" config-file="python-deps.xml">com.intellij.modules.python</depends>
-    <!--<depends optional="true" config-file="objc-deps.xml">com.intellij.modules.cidr.lang</depends>-->
+    <depends optional="true" config-file="objc-deps.xml">com.intellij.modules.cidr.lang</depends>
     <!--<depends optional="true" config-file="webstorm-deps.xml">com.intellij.modules.webstorm</depends>-->
     <!--<depends optional="true" config-file="phpstorm-deps.xml">com.jetbrains.php</depends>-->
     <!--<depends optional="true" config-file="clion-deps.xml">com.intellij.modules.clion</depends>-->
@@ -36,7 +36,7 @@
     <extensionPoints>
         <extensionPoint name="TrainingLangExtension"
                         beanClass="com.intellij.lang.LanguageExtensionPoint">
-            <with attribute="implementationClass" implements="training.lang.LangSupport"/>
+            <with attribute="implementationClass" implements="training.lang.LangSupportInterface"/>
         </extensionPoint>
     </extensionPoints>
 
