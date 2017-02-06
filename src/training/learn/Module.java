@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.TestOnly;
 import training.lang.LangManager;
-import training.lang.LangSupport;
+import training.lang.LangSupportInterface;
 import training.learn.exceptons.BadLessonException;
 import training.learn.exceptons.BadModuleException;
 import training.util.GenModuleXml;
@@ -204,7 +204,7 @@ public class Module{
         return filterLessonByLang(langManager.getLangSupport());
     }
 
-    public List<Lesson> filterLessonByLang(LangSupport langSupport) {
+    public List<Lesson> filterLessonByLang(LangSupportInterface langSupport) {
         return allLessons.stream().filter(lesson -> langSupport.acceptLang(lesson.getLang())).collect(Collectors.toList());
     }
 

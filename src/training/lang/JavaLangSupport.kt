@@ -21,7 +21,7 @@ import java.util.*
 /**
  * @author Sergey Karashevich
  */
-class JavaLangSupport : LangSupport {
+class JavaLangSupport : LangSupport() {
 
     private val acceptableLanguages = setOf("java", "kt", "html")
     override fun acceptLang(ext: String) = acceptableLanguages.contains(ext.toLowerCase())
@@ -42,7 +42,7 @@ class JavaLangSupport : LangSupport {
     }
 
 
-    override fun getModuleBuilder(): ModuleBuilder = JavaModuleBuilder()
+    override fun getModuleBuilder(): ModuleBuilder? = JavaModuleBuilder()
 
     //Java SDK and project configuration staff
 

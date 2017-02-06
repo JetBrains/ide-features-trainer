@@ -24,7 +24,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import training.actions.OpenLessonAction;
 import training.lang.LangManager;
-import training.lang.LangSupport;
+import training.lang.LangSupportInterface;
 import training.learn.exceptons.*;
 import training.learn.log.GlobalLessonLog;
 import training.ui.FeedbackManager;
@@ -164,10 +164,12 @@ public class CourseManager implements PersistentStateComponent<CourseManager.Sta
     public void checkEnvironment(@NotNull Project project) throws OldJdkException, InvalidSdkException, NoSdkException, NoJavaModuleException {
 
         final Sdk sdk = ProjectRootManager.getInstance(project).getProjectSdk();
-        if (sdk == null) throw new NoSdkException();
-        final SdkTypeId sdkType = sdk.getSdkType();
-        //noinspection ConstantConditions
-        LangManager.Companion.getInstance().getLangSupport().checkSdkCompatibility(sdk, sdkType);
+        if (LangManager.Companion.getInstance().getLangSupport().needToCheckSDK()) {
+            if (sdk == null) throw new NoSdkException();
+            final SdkTypeId sdkType = sdk.getSdkType();
+            //noinspection ConstantConditions
+            LangManager.Companion.getInstance().getLangSupport().checkSdkCompatibility(sdk, sdkType);
+        }
     }
 
 
@@ -397,7 +399,7 @@ public class CourseManager implements PersistentStateComponent<CourseManager.Sta
         return nextModule;
     }
 
-    public int calcLessonsForLanguage(LangSupport langSupport) {
+    public int calcLessonsForLanguage(LangSupportInterface langSupport) {
         Ref<Integer> inc = new Ref<>(0);
         Module[] inModules = getModules();
         if (inModules == null) return 0;
