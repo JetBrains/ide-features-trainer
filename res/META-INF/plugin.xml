@@ -26,7 +26,7 @@
     <depends>com.intellij.modules.java</depends>
 
     <depends optional="true" config-file="java-deps.xml">com.intellij.modules.java</depends>
-    <!--<depends optional="true" config-file="python-deps.xml">com.intellij.modules.python</depends>-->
+    <depends optional="true" config-file="python-deps.xml">com.intellij.modules.python</depends>
     <!--<depends optional="true" config-file="objc-deps.xml">com.intellij.modules.cidr.lang</depends>-->
     <!--<depends optional="true" config-file="webstorm-deps.xml">com.intellij.modules.webstorm</depends>-->
     <!--<depends optional="true" config-file="phpstorm-deps.xml">com.jetbrains.php</depends>-->
@@ -41,17 +41,16 @@
     </extensionPoints>
 
 
-
     <change-notes>
         &lt;b&gt;Fixed &amp; New:&lt;/b&gt;
         &lt;ul&gt;
-            &lt;li&gt;NPE: LearnProjectComponent.getLearnStripeButton&lt;/li&gt;
-            &lt;li&gt;NSFE: LearnUIManager.init&lt;/li&gt;
+        &lt;li&gt;NPE: LearnProjectComponent.getLearnStripeButton&lt;/li&gt;
+        &lt;li&gt;NSFE: LearnUIManager.init&lt;/li&gt;
         &lt;/ul&gt;
     </change-notes>
 
     <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
-    <idea-version since-build="171"/>
+    <idea-version since-build="171" until-build="173.*"/>
 
     <extensions defaultExtensionNs="com.intellij">
         <statistics.usagesCollector implementation="training.statistic.LessonUsageCollector"/>
@@ -59,37 +58,28 @@
         <actionPromoter implementation="training.editor.actions.LearnActionPromoter"/>
         <applicationService
                 serviceInterface="training.learn.CourseManager"
-                serviceImplementation="training.learn.CourseManager">
-        </applicationService>
+                serviceImplementation="training.learn.CourseManager"/>
         <applicationService
-                serviceInterface="training.learn.LessonManager"
-                serviceImplementation="training.learn.LessonManager">
-        </applicationService>
+                serviceInterface="training.learn.lesson.LessonManager"
+                serviceImplementation="training.learn.lesson.LessonManager"/>
         <applicationService
                 serviceInterface="training.lang.LangManager"
-                serviceImplementation="training.lang.LangManager">
-        </applicationService>
-        <applicationService
-                serviceInterface="training.ui.FeedbackManager"
-                serviceImplementation="training.ui.FeedbackManager">
-        </applicationService>
+                serviceImplementation="training.lang.LangManager"/>
         <applicationService
                 serviceInterface="training.statistic.RequestService"
-                serviceImplementation="training.statistic.SimpleRequestService">
-        </applicationService>
+                serviceImplementation="training.statistic.SimpleRequestService"/>
         <applicationService
                 serviceInterface="training.util.UrlProvider"
-                serviceImplementation="training.util.InternalUrlProvider">
-        </applicationService>
+                serviceImplementation="training.util.InternalUrlProvider"/>
         <applicationService
                 serviceInterface="training.statistic.FeedbackSender"
-                serviceImplementation="training.statistic.FeedbackSender">
-        </applicationService>
+                serviceImplementation="training.statistic.FeedbackSender"/>
         <applicationService
                 serviceInterface="training.ui.LearnUIManager"
-                serviceImplementation="training.ui.LearnUIManager">
-        </applicationService>
-
+                serviceImplementation="training.ui.LearnUIManager"/>
+        <applicationService
+                serviceInterface="training.learn.lesson.LessonStateBase"
+                serviceImplementation="training.learn.lesson.LessonStateBase"/>
 
         <toolWindow id="Learn" anchor="left" factoryClass="training.ui.LearnToolWindowFactory"
                     conditionClass="training.ui.LearnCondition"/>
@@ -115,9 +105,9 @@
             <keyboard-shortcut first-keystroke="control shift RIGHT" keymap="Mac OS X 10.5+"/>
             <keyboard-shortcut first-keystroke="control shift RIGHT" keymap="Mac OS X"/>
         </action>
-        <action id="learn.open.lesson" text="Open Lesson" class="training.actions.OpenLessonAction" />
+        <action id="learn.open.lesson" text="Open Lesson" class="training.actions.OpenLessonAction"/>
         <!--TODO: REMOVE THIS ACTION BEFORE RELEASE-->
-        <action id="learn.open.chooseLang" text="Choose Lang" class="training.actions.ShowChooseLangPanelAction" />
+        <action id="learn.open.chooseLang" text="Choose Lang" class="training.actions.ShowChooseLangPanelAction"/>
     </actions>
 
 </idea-plugin>
