@@ -1,6 +1,10 @@
 package training.util
 
+import com.intellij.ide.DataManager
+import com.intellij.lang.Language
+import com.intellij.openapi.actionSystem.CommonDataKeys
 import com.intellij.openapi.components.ServiceManager
+import com.intellij.openapi.project.Project
 import java.io.File
 import java.io.FileFilter
 
@@ -91,3 +95,13 @@ open class UniqueFilesProvider(private val baseName: String, private val rootDir
 }
 
 fun isPropertyExists(name: String) = System.getProperty(name) != null
+
+fun findLanguageByID(id: String? ): Language? {
+    val effectiveId = if (id!!.toLowerCase() == "cpp"){ "ObjectiveC" }else { id }
+    val languageByID = Language.findLanguageByID(effectiveId)
+    return languageByID
+}
+
+fun getCurrentProject(): Project? {
+    return CommonDataKeys.PROJECT.getData(DataManager.getInstance().dataContext)
+}
