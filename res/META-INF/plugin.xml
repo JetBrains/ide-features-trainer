@@ -60,6 +60,9 @@
                 serviceInterface="training.learn.CourseManager"
                 serviceImplementation="training.learn.CourseManager"/>
         <applicationService
+                serviceInterface="training.statistic.ActivityManager"
+                serviceImplementation="training.statistic.ActivityManager"/>
+        <applicationService
                 serviceInterface="training.learn.lesson.LessonManager"
                 serviceImplementation="training.learn.lesson.LessonManager"/>
         <applicationService
@@ -75,8 +78,8 @@
                 serviceInterface="training.statistic.FeedbackSender"
                 serviceImplementation="training.statistic.FeedbackSender"/>
         <applicationService
-                serviceInterface="training.ui.LearnUIManager"
-                serviceImplementation="training.ui.LearnUIManager"/>
+                serviceInterface="training.ui.LearnUISettings"
+                serviceImplementation="training.ui.LearnUISettings"/>
         <applicationService
                 serviceInterface="training.learn.lesson.LessonStateBase"
                 serviceImplementation="training.learn.lesson.LessonStateBase"/>
