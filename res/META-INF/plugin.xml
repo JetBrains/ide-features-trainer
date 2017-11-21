@@ -33,15 +33,10 @@
 
 
     <change-notes>
-        &lt;b&gt;Fixed &amp; New:&lt;/b&gt;
-        &lt;ul&gt;
-        &lt;li&gt;NPE: LearnProjectComponent.getLearnStripeButton&lt;/li&gt;
-        &lt;li&gt;NSFE: LearnUIManager.init&lt;/li&gt;
-        &lt;/ul&gt;
     </change-notes>
 
     <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
-    <idea-version since-build="171" until-build="173.*"/>
+    <idea-version since-build="173" until-build="173.*"/>
 
     <extensions defaultExtensionNs="com.intellij">
         <statistics.usagesCollector implementation="training.statistic.LessonUsageCollector"/>
