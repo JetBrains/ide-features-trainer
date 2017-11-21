@@ -4,17 +4,7 @@
     <vendor email="sergey.karashevich@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
 
     <description>
-        &lt;p&gt;We created this plugin especially for newcomers, people who are not familiar with the IDE features. The
-        main idea of the plugin is to offer IntelliJ IDEA shortcuts and features training right inside the IDE. No need
-        to read a long manual or search for a proper screencast for dummies, just install this plugin, open IntelliJ
-        IDEA and start learning in an interactive way and getting used to your new IDE.&lt;/p&gt;
-
-        &lt;p&gt;The course is divided into 5 modules: Editor Basics, Completions, Refactorings, Code Assistance and
-        Navigation, with several lessons in a module. Each lesson includes short tasks requiring one or two shortcuts to
-        complete.&lt;/p&gt;
-
-        &lt;p&gt;We are working on new lessons. If you have already finished this course, come back here soon to update
-        the plugin and keep training.&lt;/p&gt;
+        &lt;p&gt;A good way to learn IDE shortcuts for the most frequently used actions. This plugin may be useful for IDE beginners or for those who have migrated from the other IDE.&lt;/p&gt;
 
         &lt;p&gt;Feedback is much appreciated: &lt;a href=&quot;http://jb.gg/training-plugin-feedback&quot;&gt;jb.gg/training-plugin-feedback&lt;/a&gt;
         &lt;/p&gt;
