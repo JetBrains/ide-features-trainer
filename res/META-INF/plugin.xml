@@ -39,7 +39,7 @@
     <idea-version since-build="173" until-build="173.*"/>
 
     <extensions defaultExtensionNs="com.intellij">
-        <statistics.usagesCollector implementation="training.statistic.StatisticBase"/>
+        <statistics.usagesCollector implementation="training.statistic.StatisticCollector"/>
 
         <actionPromoter implementation="training.editor.actions.LearnActionPromoter"/>
         <applicationService
