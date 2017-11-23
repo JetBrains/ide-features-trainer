@@ -3,15 +3,17 @@
     <name>IDE Features Trainer</name>
     <vendor email="sergey.karashevich@jetbrains.com" url="http://www.jetbrains.com">JetBrains</vendor>
 
-    <description>
-        &lt;p&gt;A good way to learn IDE shortcuts for the most frequently used actions. This plugin may be useful for IDE beginners or for those who have migrated from the other IDE.&lt;/p&gt;
+    <description><![CDATA[
 
-        &lt;p&gt;Feedback is much appreciated: &lt;a href=&quot;http://jb.gg/training-plugin-feedback&quot;&gt;jb.gg/training-plugin-feedback&lt;/a&gt;
-        &lt;/p&gt;
+        <p>Learn basic shortcuts and essential features interactively – right inside the IDE. No need to read long manuals or look for screencasts. Just install this plugin, open the IDE, and go to the Learn tool window to start training.</p>
 
-        &lt;p&gt;For bugs and feature suggests: &lt;a href=&quot;https://training.myjetbrains.com/youtrack/newissue&quot;&gt;https://training.myjetbrains.com/youtrack/newissue&lt;/a&gt;
-        &lt;/p&gt;
-    </description>
+        <p>The course includes 5 modules: Editor Basics, Completions, Refactorings, Code Assistance, and Navigation. Each module has several short lessons with quick tasks focusing on one or two useful shortcuts or features.</p>
+
+        <p>Your feedback is much appreciated here: <a href="http://jb.gg/training-plugin-feedback">jb.gg/training-plugin-feedback</a></p>
+
+        <p>Found a bug or have a feature to suggest? Welcome to the tracker: <a href="https://training.myjetbrains.com/youtrack/issues/TP">https://training.myjetbrains.com/youtrack/issues/TP</a></p>
+
+    ]]></description>
 
     <depends>com.intellij.modules.java</depends>
 
