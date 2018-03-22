@@ -66,8 +66,8 @@
                 serviceInterface="training.statistic.FeedbackSender"
                 serviceImplementation="training.statistic.FeedbackSender"/>
         <applicationService
-                serviceInterface="training.ui.LearnUISettings"
-                serviceImplementation="training.ui.LearnUISettings"/>
+                serviceInterface="training.ui.UISettings"
+                serviceImplementation="training.ui.UISettings"/>
         <applicationService
                 serviceInterface="training.learn.lesson.LessonStateBase"
                 serviceImplementation="training.learn.lesson.LessonStateBase"/>
