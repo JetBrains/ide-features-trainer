@@ -120,8 +120,8 @@ class Module(val name: String, moduleXmlPath: String, private val root: Element)
     return lessons.any { !it.passed }
   }
 
-  val nameWithoutWhitespaces: String
-    get() = name.replace("\\s+".toRegex(), "")
+  val sanitizedName: String
+    get() = name.replace("[^\\dA-Za-z ]".toRegex(), "").replace("\\s+".toRegex(), "")
 
   override fun equals(other: Any?): Boolean {
     if (other == null) return false
