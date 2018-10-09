@@ -1,6 +1,8 @@
 package training.ui.views
 
+import com.intellij.openapi.project.DumbService
 import com.intellij.openapi.project.guessCurrentProject
+import com.intellij.openapi.ui.popup.JBPopupFactory
 import com.intellij.openapi.util.SystemInfo
 import com.intellij.ui.JBColor
 import com.intellij.ui.components.JBLabel
@@ -8,10 +10,12 @@ import com.intellij.ui.components.labels.LinkLabel
 import com.intellij.util.containers.BidirectionalMap
 import com.intellij.util.ui.UIUtil
 import training.learn.CourseManager
+import training.learn.LearnBundle
 import training.learn.Module
 import training.ui.LearnIcons
 import training.ui.UISettings
 import training.util.DataLoader
+import training.util.createBalloon
 import java.awt.*
 import java.awt.event.MouseEvent
 import java.awt.event.MouseListener
@@ -98,11 +102,17 @@ class ModulesPanel : JPanel() {
             moduleName.name = "moduleName"
             module2linklabel!![module] = moduleName
             moduleName.setListener({ aSource, aLinkData ->
+                val project = guessCurrentProject(lessonPanel)
+                val dumbService = DumbService.getInstance(project)
+                if (dumbService.isDumb) {
+                    val balloon = createBalloon(LearnBundle.message("indexing.message"))
+                    balloon.showInCenterOf(module2linklabel!![module])
+                    return@setListener
+                }
                 try {
-                    val guessCurrentProject = guessCurrentProject(lessonPanel)
                     var lesson = module.giveNotPassedLesson()
                     if (lesson == null) lesson = module.lessons[0]
-                    CourseManager.instance.openLesson(guessCurrentProject, lesson)
+                    CourseManager.instance.openLesson(project, lesson)
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
