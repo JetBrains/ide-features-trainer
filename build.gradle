@@ -1,18 +1,6 @@
-buildscript {
-    ext.kotlin_version = '1.1.4-3'
-    repositories {
-        mavenLocal()
-        mavenCentral()
-        maven { url "http://repository.jetbrains.com/repo/"}
-    }
-    dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlin_version}"
-    }
-}
-
-
 plugins {
-    id "org.jetbrains.intellij" version "0.3.4"
+    id 'org.jetbrains.kotlin.jvm' version '1.2.61'
+    id "org.jetbrains.intellij" version "0.3.11"
 }
 
 repositories {
@@ -24,15 +12,12 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
-    compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    compile "org.jetbrains.kotlin:kotlin-reflect"
 }
 
 group 'org.sk'
 version "$version.$buildNumber"
-
-apply plugin: 'java'
-apply plugin: "kotlin"
 
 sourceCompatibility = 1.8
 
@@ -44,6 +29,9 @@ intellij {
 //        username repoUser
 //        password repoPassword
 //    }
+    
+    alternativeIdePath '/Users/karashevich/Library/Application Support/JetBrains/Toolbox/apps/IDEA-U/ch-2/191.31/IntelliJ IDEA 2019.1 EAP.app'
+//    alternativeIdePath '/Users/karashevich/Library/Application Support/JetBrains/Toolbox/apps/AppCode/ch-0/191.27/AppCode 2019.1 EAP.app'
     intellij.updateSinceUntilBuild = false
 }
 
@@ -58,7 +46,8 @@ sourceSets {
         java.srcDir 'testsData'
     }
 }
-
-task printVersion << {
-    println version
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
 }
