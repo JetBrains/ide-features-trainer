@@ -1,2 +1,6 @@
 **/.DS_Store
 **/xcuserdata/*.*
+out/
+build/
+.gradle/
+.idea/
