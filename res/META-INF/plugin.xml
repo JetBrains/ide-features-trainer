@@ -18,6 +18,7 @@
     <depends>com.intellij.modules.java</depends>
 
     <depends optional="true" config-file="java-deps.xml">com.intellij.modules.java</depends>
+    <depends optional="true" config-file="ruby-deps.xml">com.intellij.modules.ruby</depends>
     <!--<depends optional="true" config-file="python-deps.xml">com.intellij.modules.python</depends>-->
     <!--<depends optional="true" config-file="go-deps.xml">org.jetbrains.plugins.go</depends>-->
     <!--<depends optional="true" config-file="objc-deps.xml">com.intellij.modules.cidr.lang</depends>-->
