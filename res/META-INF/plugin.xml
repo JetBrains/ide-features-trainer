@@ -16,6 +16,7 @@
     ]]></description>
 
     <depends>com.intellij.modules.java</depends>
+    <depends optional="true">com.intellij.testGuiFramework</depends>
 
     <depends optional="true" config-file="java-deps.xml">com.intellij.modules.java</depends>
     <depends optional="true" config-file="ruby-deps.xml">com.intellij.modules.ruby</depends>
