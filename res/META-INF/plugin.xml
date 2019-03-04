@@ -38,7 +38,7 @@
 
 
     <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
-    <idea-version since-build="173"/>
+    <idea-version since-build="183"/>
 
     <extensions defaultExtensionNs="com.intellij">
 
