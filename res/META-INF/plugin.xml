@@ -18,7 +18,7 @@
     <depends optional="true">com.intellij.testGuiFramework</depends>
 
     <depends optional="true" config-file="java-deps.xml">com.intellij.modules.java</depends>
-    <depends optional="true" config-file="ruby-deps.xml">com.intellij.modules.ruby</depends>
+<!--    <depends optional="true" config-file="ruby-deps.xml">com.intellij.modules.ruby</depends>-->
     <!--<depends optional="true" config-file="python-deps.xml">com.intellij.modules.python</depends>-->
     <!--<depends optional="true" config-file="python-deps.xml">com.intellij.modules.python</depends>-->
     <!--<depends optional="true" config-file="go-deps.xml">org.jetbrains.plugins.go</depends>-->
