@@ -18,7 +18,7 @@
     <depends optional="true">com.intellij.testGuiFramework</depends>
 
     <depends optional="true" config-file="java-deps.xml">com.intellij.modules.java</depends>
-    <depends optional="true" config-file="ruby-deps.xml">com.intellij.modules.ruby</depends>
+<!--    <depends optional="true" config-file="ruby-deps.xml">com.intellij.modules.ruby</depends>-->
     <!--<depends optional="true" config-file="python-deps.xml">com.intellij.modules.python</depends>-->
     <!--<depends optional="true" config-file="go-deps.xml">org.jetbrains.plugins.go</depends>-->
     <!--<depends optional="true" config-file="objc-deps.xml">com.intellij.modules.cidr.lang</depends>-->
@@ -60,9 +60,11 @@
         <applicationService
                 serviceInterface="training.util.UrlProvider"
                 serviceImplementation="training.util.InternalUrlProvider"/>
-        <applicationService
-                serviceInterface="training.statistic.FeedbackSender"
-                serviceImplementation="training.statistic.FeedbackSender"/>
+
+<!--        turn off since 191 -->
+<!--        <applicationService-->
+<!--                serviceInterface="training.statistic.FeedbackSender"-->
+<!--                serviceImplementation="training.statistic.FeedbackSender"/>-->
         <applicationService
                 serviceInterface="training.ui.UISettings"
                 serviceImplementation="training.ui.UISettings"/>
@@ -76,6 +78,9 @@
 
         <toolWindow id="Learn" anchor="left" factoryClass="training.ui.LearnToolWindowFactory"
                     conditionClass="training.ui.LearnCondition"/>
+
+        <statistics.applicationUsagesCollector implementation="training.statistic.LearnApplicationUsagesCollector"/>
+
     </extensions>
 
     <application-components>
@@ -100,7 +105,7 @@
         </action>
         <action id="learn.open.lesson" text="Open Lesson" class="training.actions.OpenLessonAction"/>
         <!--TODO: REMOVE THIS ACTION BEFORE RELEASE-->
-        <action id="learn.open.chooseLang" text="Choose Lang" class="training.actions.ShowChooseLangPanelAction"/>
+<!--        <action id="learn.open.chooseLang" text="Choose Lang" class="training.actions.ShowChooseLangPanelAction"/>-->
     </actions>
 
 </idea-plugin>
