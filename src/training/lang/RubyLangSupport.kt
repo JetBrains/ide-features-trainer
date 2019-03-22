@@ -1,5 +1,6 @@
 package training.lang
 
+import com.intellij.openapi.application.ApplicationNamesInfo
 import com.intellij.openapi.module.Module
 import com.intellij.openapi.module.ModuleManager
 import com.intellij.openapi.project.Project
@@ -20,6 +21,10 @@ import training.project.ProjectUtils
 import java.io.File
 
 class RubyLangSupport : AbstractLangSupport() {
+
+  override val isSupported: Boolean
+    get() = ApplicationNamesInfo.getInstance().fullProductName.toLowerCase().contains("rubymine")
+
   private val rubyProjectName: String
     get() = "RubyLearnProject"
 

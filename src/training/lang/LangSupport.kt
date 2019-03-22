@@ -11,6 +11,8 @@ import training.learn.exceptons.NoSdkException
  */
 interface LangSupport {
 
+    val isSupported: Boolean
+
     val primaryLanguage: String
     val defaultProjectName: String
     companion object {

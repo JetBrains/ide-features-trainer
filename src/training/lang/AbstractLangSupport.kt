@@ -28,6 +28,10 @@ import training.learn.exceptons.NoSdkException
 import java.io.File
 
 abstract class AbstractLangSupport : LangSupport {
+
+    override val isSupported: Boolean
+        get() = true
+
     override val defaultProjectName: String
         get() = "LearnProject"
 

@@ -16,7 +16,7 @@ import training.util.findLanguageByID
 @State(name = "LangManager", storages = [Storage(value = "ide-features-trainer.xml")])
 class LangManager : PersistentStateComponent<LangManager.State> {
 
-  var supportedLanguagesExtensions: List<LanguageExtensionPoint<LangSupport>> = ExtensionPointName<LanguageExtensionPoint<LangSupport>>(LangSupport.EP_NAME).extensions.toList()
+  var supportedLanguagesExtensions: List<LanguageExtensionPoint<LangSupport>> = ExtensionPointName<LanguageExtensionPoint<LangSupport>>(LangSupport.EP_NAME).extensions.toList().filter { it.instance.isSupported }
   var myState = State(null)
 
   private var myLangSupport: LangSupport? = null
