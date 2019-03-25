@@ -1,12 +1,12 @@
 package training.lang
 
-import com.intellij.openapi.application.ApplicationNamesInfo
 import com.intellij.openapi.module.Module
 import com.intellij.openapi.module.ModuleManager
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.projectRoots.Sdk
 import com.intellij.openapi.roots.ProjectRootManager
 import com.intellij.openapi.util.io.FileUtil
+import com.intellij.util.PlatformUtils.isRubyMine
 import com.intellij.util.text.VersionComparatorUtil
 import org.jetbrains.plugins.ruby.gem.GemDependency
 import org.jetbrains.plugins.ruby.gem.GemInstallUtil
@@ -23,7 +23,7 @@ import java.io.File
 class RubyLangSupport : AbstractLangSupport() {
 
   override val isSupported: Boolean
-    get() = ApplicationNamesInfo.getInstance().fullProductName.toLowerCase().contains("rubymine")
+    get() = isRubyMine()
 
   private val rubyProjectName: String
     get() = "RubyLearnProject"
