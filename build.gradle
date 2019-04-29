@@ -14,18 +14,8 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
-def getGitHash = { ->
-    def stdout = new ByteArrayOutputStream()
-    exec {
-        commandLine 'git', 'rev-list', '--count', 'HEAD'
-        standardOutput = stdout
-    }
-    return stdout.toString().trim()
-}
-
 group 'org.sk'
-//TODO: change it in the release!
-version "SNAPSHOT.${getGitHash()}"
+version "$ideVersion.$buildNumber"
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
