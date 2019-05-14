@@ -3,5 +3,5 @@
 out/
 build/
 .gradle/
-.idea/
+/.idea/
 guitest.log
