@@ -2,6 +2,8 @@ package training.learn.lesson.kimpl
 
 import com.intellij.find.FindManager
 import com.intellij.find.FindResult
+import com.intellij.openapi.actionSystem.AnAction
+import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.command.CommandProcessor
 import com.intellij.openapi.command.undo.BasicUndoableAction
@@ -18,12 +20,16 @@ import com.intellij.util.DocumentUtil
 import training.commands.kotlin.TaskContext
 import training.learn.ActionsRecorder
 import training.learn.lesson.LessonManager
+import training.util.createLearnNotification
 
 class LessonExecutor(val lesson: KLesson, val editor: Editor, val project: Project) {
   private var isUnderTaskProcessing = false
   private val taskActions: MutableList<() -> Unit> = ArrayList()
 
   private var currentRecorder: ActionsRecorder? = null
+
+  private var restoreSample: LessonSample? = null
+  private val checkUnexpectedModification: Alarm by lazy { Alarm() }
 
   fun waitBeforeContinue(delayMillis: Int) {
     if(isUnderTaskProcessing) {
@@ -46,10 +52,12 @@ class LessonExecutor(val lesson: KLesson, val editor: Editor, val project: Proje
 
   fun stopLesson() {
     assert(ApplicationManager.getApplication().isDispatchThread)
+    checkUnexpectedModification.cancelAllRequests()
     currentRecorder?.let { Disposer.dispose(it) }
   }
 
   fun prepareSample(sample: LessonSample) {
+    restoreSample = sample
     addSimpleTaskAction {
       setSample(sample)
     }
@@ -93,6 +101,12 @@ class LessonExecutor(val lesson: KLesson, val editor: Editor, val project: Proje
     taskContext.apply(taskContent)
     isUnderTaskProcessing = false
 
+    restoreSample?.let { sample ->
+      recorder.addDocumentListener {
+        registerRestoreBalloon(sample, taskContext)
+      }
+    }
+
     if (TaskContext.inTestMode) {
       LessonManager.instance.testActionsExecutor.execute {
         taskContext.testActions.forEach { it.run() }
@@ -111,8 +125,7 @@ class LessonExecutor(val lesson: KLesson, val editor: Editor, val project: Proje
     taskContext.steps.forEach { step ->
       step.thenAccept {
         assert(ApplicationManager.getApplication().isDispatchThread)
-        val taskHasBeenDone = taskContext.steps.all { it.isDone }
-        if (taskHasBeenDone) {
+        if (taskHasBeenDone(taskContext)) {
           // Now we are inside some listener registered by recorder
           ApplicationManager.getApplication().invokeLater {
             // So better to exit from all callbacks and then clear all related data
@@ -126,6 +139,28 @@ class LessonExecutor(val lesson: KLesson, val editor: Editor, val project: Proje
       }
     }
   }
+
+  private fun registerRestoreBalloon(sample: LessonSample, taskContext: TaskContext) {
+    checkUnexpectedModification.cancelAllRequests()
+    if (sample.text == editor.document.text) return
+    checkUnexpectedModification.addRequest({
+      if (!taskHasBeenDone(taskContext)) {
+        val notification = createLearnNotification("Unexpected modification",
+            "Lesson code were modified in unexpected way. It can broke the lesson script." +
+                "Would you like to return into expected state?")
+
+        notification.addAction(object : AnAction("Restore sample") {
+          override fun actionPerformed(e: AnActionEvent) {
+            setSample(sample)
+            notification.hideBalloon()
+          }
+        })
+        notification.notify(project)
+      }
+    }, 500)
+  }
+
+  private fun taskHasBeenDone(taskContext: TaskContext) = taskContext.steps.all { it.isDone }
 
   private fun addSimpleTaskAction(taskAction: () -> Unit) {
     assert(ApplicationManager.getApplication().isDispatchThread)

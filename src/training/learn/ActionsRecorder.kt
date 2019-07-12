@@ -201,7 +201,7 @@ class ActionsRecorder(private val project: Project,
     }
 
     addKeyEventListener { check() }
-    document.addDocumentListener(createDocumentListener { check() })
+    addDocumentListener(check)
     addSimpleCommandListener(check)
     actionListeners.add(object : AnActionListener {
       override fun afterActionPerformed(action: AnAction, dataContext: DataContext, event: AnActionEvent) {
@@ -233,7 +233,7 @@ class ActionsRecorder(private val project: Project,
     IdeEventQueue.getInstance().addDispatcher(myEventDispatcher, this)
   }
 
-  private fun createDocumentListener(onDocumentChange: () -> Unit): DocumentListener {
+  fun addDocumentListener(onDocumentChange: () -> Unit) {
     val documentListener = object : DocumentListener {
 
       override fun beforeDocumentChange(event: DocumentEvent) {}
@@ -249,7 +249,7 @@ class ActionsRecorder(private val project: Project,
       }
     }
     documentListeners.add(documentListener)
-    return documentListener
+    document.addDocumentListener(documentListener)
   }
 
   private fun registerActionListener(processAction: (actionId: String, project: Project) -> Unit): AnActionListener {

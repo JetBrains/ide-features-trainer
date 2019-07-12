@@ -5,6 +5,10 @@ import com.intellij.ide.DataManager
 import com.intellij.ide.plugins.PluginManager
 import com.intellij.ide.plugins.PluginManagerCore
 import com.intellij.lang.Language
+import com.intellij.notification.Notification
+import com.intellij.notification.NotificationDisplayType
+import com.intellij.notification.NotificationGroup
+import com.intellij.notification.NotificationType
 import com.intellij.openapi.actionSystem.CommonDataKeys
 import com.intellij.openapi.components.ServiceManager
 import com.intellij.openapi.editor.Editor
@@ -14,6 +18,8 @@ import com.intellij.openapi.ui.popup.JBPopupFactory
 import com.intellij.openapi.util.registry.Registry
 import com.intellij.util.ui.UIUtil
 import training.learn.CourseManager
+import training.learn.LearnBundle
+import training.ui.LearnIcons
 import java.awt.Point
 import java.io.File
 import java.io.FileFilter
@@ -160,4 +166,17 @@ val featureTrainerVersion: String by lazy {
 
 val isFeatureTrainerSnapshot: Boolean by lazy {
   featureTrainerVersion.contains("SNAPSHOT")
+}
+
+
+private val LEARN_NOTIFICATION_GROUP : NotificationGroup by lazy {
+  NotificationGroup(LearnBundle.message("learn.plugin.name"),
+      NotificationDisplayType.STICKY_BALLOON,
+      false)
+}
+
+fun createLearnNotification(subtitle: String, message: String): Notification {
+  return LEARN_NOTIFICATION_GROUP.createNotification(
+      LearnBundle.message("learn.plugin.name"), subtitle, message, NotificationType.INFORMATION)
+      .setIcon(LearnIcons.chevronToolWindowIcon)
 }
