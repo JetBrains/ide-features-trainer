@@ -43,11 +43,16 @@
 
 
     <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
-    <idea-version since-build="191.4738.6"/>
+    <idea-version since-build="192.4787.16"/>
 
     <extensions defaultExtensionNs="com.intellij">
 
         <actionPromoter implementation="training.editor.actions.LearnActionPromoter"/>
+        <!-- groupId should be same to StatisticBase.GROUP_ID and version to StatisticBase.VERSION -->
+        <statistics.counterUsagesCollector groupId="ideFeaturesTrainer" version="3"/>
+        <statistics.validation.customWhiteListRule
+                implementation="training.statistic.IdeFeaturesTrainerRuleValidator"/>
+
         <applicationService
                 serviceInterface="training.learn.CourseManager"
                 serviceImplementation="training.learn.CourseManager"/>
@@ -78,8 +83,6 @@
         <applicationService
                 serviceInterface="training.statistic.StatisticBase"
                 serviceImplementation="training.statistic.StatisticBase"/>
-
-
         <toolWindow id="Learn" anchor="left" factoryClass="training.ui.LearnToolWindowFactory"
                     conditionClass="training.ui.LearnCondition"/>
 
