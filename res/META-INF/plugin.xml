@@ -54,16 +54,12 @@
                 implementation="training.statistic.IdeFeaturesTrainerRuleValidator"/>
 
         <applicationService
-                serviceInterface="training.learn.CourseManager"
                 serviceImplementation="training.learn.CourseManager"/>
         <applicationService
-                serviceInterface="training.statistic.ActivityManager"
                 serviceImplementation="training.statistic.ActivityManager"/>
         <applicationService
-                serviceInterface="training.learn.lesson.LessonManager"
                 serviceImplementation="training.learn.lesson.LessonManager"/>
         <applicationService
-                serviceInterface="training.lang.LangManager"
                 serviceImplementation="training.lang.LangManager"/>
         <applicationService
                 serviceInterface="training.statistic.RequestService"
@@ -72,16 +68,12 @@
                 serviceInterface="training.util.UrlProvider"
                 serviceImplementation="training.util.InternalUrlProvider"/>
         <applicationService
-                serviceInterface="training.statistic.FeedbackSender"
                 serviceImplementation="training.statistic.FeedbackSender"/>
         <applicationService
-                serviceInterface="training.ui.UISettings"
                 serviceImplementation="training.ui.UISettings"/>
         <applicationService
-                serviceInterface="training.learn.lesson.LessonStateBase"
                 serviceImplementation="training.learn.lesson.LessonStateBase"/>
         <applicationService
-                serviceInterface="training.statistic.StatisticBase"
                 serviceImplementation="training.statistic.StatisticBase"/>
         <toolWindow id="Learn" anchor="left" factoryClass="training.ui.LearnToolWindowFactory"
                     conditionClass="training.ui.LearnCondition"/>
@@ -94,7 +86,6 @@
     <project-components>
         <component>
             <implementation-class>training.components.LearnProjectComponent</implementation-class>
-            <interface-class>training.components.LearnProjectComponent</interface-class>
         </component>
     </project-components>
 
@@ -103,7 +94,7 @@
             <add-to-group group-id="WelcomeScreen.QuickStart" anchor="last"/>
         </action>
 
-        <action id="learn.next.lesson" class="training.actions.NextLessonAction" text="Next lesson">
+        <action id="learn.next.lesson" class="training.actions.NextLessonAction" text="Next Lesson">
             <keyboard-shortcut first-keystroke="alt shift RIGHT" keymap="$default"/>
             <keyboard-shortcut first-keystroke="control shift RIGHT" keymap="Mac OS X 10.5+"/>
             <keyboard-shortcut first-keystroke="control shift RIGHT" keymap="Mac OS X"/>
