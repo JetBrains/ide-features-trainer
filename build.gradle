@@ -32,8 +32,8 @@ def getGitHash = { ->
 
 group 'org.sk'
 //TODO: change it in the release!
-//version "$ideVersion.$buildNumber"
-version "SNAPSHOT.${getGitHash()}"
+version "$ideVersion.$buildNumber"
+//version "SNAPSHOT.${getGitHash()}"
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
