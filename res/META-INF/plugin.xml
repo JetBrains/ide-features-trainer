@@ -7,7 +7,7 @@
 
         <p>Learn basic shortcuts and essential features interactively – right inside the IDE. No need to read long manuals or look for screencasts. Just install this plugin, open the IDE, and go to the Learn tool window to start training.</p>
 
-        <p>The course includes 5 modules: Editor Basics, Completions, Refactorings, Code Assistance, and Navigation. Each module has several short lessons with quick tasks focusing on one or two useful shortcuts or features.</p>
+        <p>The course includes a number of modules which teach you how to do common jobs quickly, including refactorings, project navigation, and more. Each module has several short lessons with quick tasks focusing on a few useful shortcuts or features.</p>
 
         <p>Your feedback is much appreciated here: <a href="http://jb.gg/training-plugin-feedback">jb.gg/training-plugin-feedback</a></p>
 
@@ -29,7 +29,7 @@
     <depends optional="true" config-file="go-deps.xml">org.jetbrains.plugins.go</depends>
     <!--<depends optional="true" config-file="objc-deps.xml">com.intellij.modules.cidr.lang</depends>-->
     <depends optional="true" config-file="swift-deps.xml">com.intellij.modules.cidr.lang</depends>
-    <!--<depends optional="true" config-file="webstorm-deps.xml">com.intellij.modules.webstorm</depends>-->
+    <depends optional="true" config-file="javascript-deps.xml">JavaScript</depends>
     <!--<depends optional="true" config-file="phpstorm-deps.xml">com.jetbrains.php</depends>-->
     <!--<depends optional="true" config-file="clion-deps.xml">com.intellij.modules.clion</depends>-->
     <!--<depends optional="true" config-file="rider-deps.xml">com.intellij.modules.rider</depends>-->

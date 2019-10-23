@@ -4,6 +4,7 @@ import com.intellij.openapi.editor.Editor
 import com.intellij.openapi.project.Project
 import org.jetbrains.annotations.CalledInAwt
 import training.commands.kotlin.TaskContext
+import training.learn.lesson.LessonManager
 
 class LessonContext(val lesson: KLesson, val editor: Editor, val project: Project, private val executor: LessonExecutor) {
   /**
