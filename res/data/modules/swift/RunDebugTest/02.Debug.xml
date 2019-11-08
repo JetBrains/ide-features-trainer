@@ -31,5 +31,7 @@ class DebugExample: UIViewController {
     <Try triggers="EditorSelectWord;EditorSelectWord;EvaluateExpression">Select <code>controllers[controllers.count-1]</code> using <action>EditorSelectWord</action> and use <strong>Evaluate Expression</strong> (<action>EvaluateExpression</action> → <action>EditorEnter</action>).</Try>
     <Try triggers="EditorChooseLookupItem">Enter the dot symbol, select some property, and then press <action>EditorEnter</action> to evaluate it without switching to LLDB console.</Try>
     <Try triggers="Stop">Press <action>Stop</action> to stop debugging the application.</Try>
+    <MoveCaret position="11:9"/>
+    <Try triggers="ToggleLineBreakpoint;">Remove a breakpoint at line 11 with <action>ToggleLineBreakpoint</action>.</Try>
     <Win/>
 </xml>

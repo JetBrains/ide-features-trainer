@@ -32,7 +32,7 @@ class AppCode: JetBrainsIDE {}]]></CopyText>
     <Try triggers="GotoFile;AppDelegate.swift">Nice! Now let's open the <code>AppDelegate.swift</code> file: press <action>GotoFile</action>, type <code>ad</code> and press <action>EditorEnter</action>.</Try>
     <Try triggers="GotoSymbol;MasterViewController.swift">Let's jump directly to the <code>detailViewController</code> declaration in the <code>MasterViewController</code> class. Press <action>GotoSymbol</action>, type <code>dvc</code>, and then press <action>EditorEnter</action>.</Try>
     <Text>If you also need to include standard libraries and other non-project files, symbols, or classes, just press the shortcut twice.</Text>
-    <MoveCaret position="5:20" />
+    <MoveCaret position="5:40" />
     <Try triggers="GotoDeclaration;DetailViewController.swift">Another important action from the <strong>Go to...</strong> family is <strong>Go to Declaration</strong>. Place the caret at <code>DetailViewController?</code> and press <action>GotoDeclaration</action> to jump to its declaration.</Try>
     <MoveCaret position="3:33" />
     <Try trigger="GotoImplementation">If a method or class has several implementations, <action>GotoDeclaration</action> will get you to the first one. Try using <action>GotoImplementation</action> to see all the definitions of <code>UIViewController</code>.</Try>
@@ -41,6 +41,6 @@ class AppCode: JetBrainsIDE {}]]></CopyText>
     <Try trigger="GotoSuperMethod"><strong>Go to Super Definition</strong> navigates you to the parent class declaration. Press <action>GotoSuperMethod</action> to jump to the <code>JetBrainsIDE</code> class.</Try>
     <Try trigger="GotoSuperMethod">Now press <action>GotoSuperMethod</action> again to jump to the <code>IDEProtocol</code> protocol declaration.</Try>
     <Try trigger="RecentFiles">Finally, there are two very useful and frequently used navigation actions that can help you quickly switch between recent files and toolwindows. First up is the <string>Recent files</string> popup. Open it via <action>RecentFiles</action> and select what you need using the arrow keys on the keyboard.</Try>
-    <Try triggers="Switcher">The second is <strong>Switcher</strong>, which looks the same but immediately disappears after you select something. Hold the <shortcut>⌃</shortcut> key while pressing <action>Switcher</action>, and press it again to switch to select some file or toolwindow. Release the <shortcut>⌃</shortcut> key after you've selected what you wanted.</Try>
+    <Try triggers="Switcher">The second is <strong>Switcher</strong>, which looks the same but immediately disappears after you select something. Hold the <shortcut>⌃</shortcut> key while pressing <action>Switcher</action>, and press <shortcut>⇥</shortcut> to switch to select some file or toolwindow. Release the <shortcut>⌃</shortcut> key after you've selected what you wanted.</Try>
     <Win/>
 </xml>
