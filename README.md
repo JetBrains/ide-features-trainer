@@ -1,7 +1,7 @@
 # IDE Features Trainer
 
 ### Attention
-Repository has been moved to [JetBrains/intellij-plugins/ide-features-trainer](https://github.com/JetBrains/intellij-plugins/tree/master/ide-features-trainer).
+The repository has been moved to [JetBrains/intellij-plugins/ide-features-trainer](https://github.com/JetBrains/intellij-plugins/tree/master/ide-features-trainer).
 
 
 ### Description
